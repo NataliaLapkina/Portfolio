@@ -62,7 +62,7 @@ const services = [
 // ─── Data: Portfolio ───
 const portfolio = [
   {
-    title: 'Сайт логопеда-дефектолога',
+    title: 'Логопед',
     desc: 'Современный сайт специалиста с услугами, дипломами и онлайн-записью.',
     url: 'https://natalialapkina.github.io/logoped-final/',
     preview: 'https://natalialapkina.github.io/logoped-final/',
