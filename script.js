@@ -64,8 +64,8 @@ const portfolio = [
   {
     title: 'Логопед',
     desc: 'Современный сайт специалиста с услугами, дипломами и онлайн-записью.',
-    url: 'https://natalialapkina.github.io/logoped-final/',
-    preview: 'https://natalialapkina.github.io/logoped-final/',
+    url: 'https://natalialapkina.github.io/site-logoped-final/',
+    preview: 'https://natalialapkina.github.io/site-logoped-final/',
     emoji: '🗣️',
     status: null
   },
@@ -83,6 +83,14 @@ const portfolio = [
     url: 'https://airy-sweet-shop.lovable.app/',
     preview: null,
     emoji: '🍰',
+    status: null
+  },
+  {
+    title: 'Медленное озеро',
+    desc: 'Релакс-игра с мягкой анимацией ночного озера и огоньками — для спокойствия и отдыха прямо в браузере.',
+    url: 'https://natalialapkina.github.io/Medlennoe_ozero/',
+    preview: null,
+    emoji: '🌙',
     status: null
   },
   {
@@ -335,7 +343,7 @@ function renderPortfolio() {
   const arrow = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
 
   grid.innerHTML = portfolio.map((p, i) => {
-    const bentoClass = i === 0 ? 'portfolio-card--featured' : i === 4 ? 'portfolio-card--wide' : i % 2 === 1 ? 'portfolio-card--compact' : '';
+    const bentoClass = i === 0 ? 'portfolio-card--featured' : i === 5 ? 'portfolio-card--wide' : i % 2 === 1 ? 'portfolio-card--compact' : '';
     const previewContent = p.preview
       ? `<img src="${p.preview}" alt="${p.title}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'portfolio-card__preview-inner\\'>${p.emoji}</div>'">`
       : `<div class="portfolio-card__preview-inner">${p.emoji}</div>`;
