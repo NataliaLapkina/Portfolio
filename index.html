@@ -105,8 +105,10 @@
             <div class="hero__orbit-ring hero__orbit-ring--1"></div>
             <div class="hero__orbit-ring hero__orbit-ring--2"></div>
             <div class="hero__orbit-ring hero__orbit-ring--3"></div>
-            <div class="hero__orbit-core">
-              <span class="hero__orbit-initials">НЛ</span>
+            <div class="hero__orbit-core" id="heroCore">
+              <!-- Чтобы показать фото: укажите путь в HERO_CONFIG.portraitSrc в script.js -->
+              <img class="hero__portrait" id="heroPortrait" src="" alt="Наталья Лапкина" width="120" height="120" hidden>
+              <span class="hero__orbit-initials" id="heroInitials">НЛ</span>
             </div>
             <div class="hero__orbit-node hero__orbit-node--1"><span>AI</span></div>
             <div class="hero__orbit-node hero__orbit-node--2"><span>Web</span></div>
@@ -155,43 +157,33 @@
         </div>
         <div class="about__grid">
           <div class="about__text reveal">
-            <p>По образованию я медицинский работник. Сегодня создаю сайты, Telegram-ботов, AI-помощников и цифровые продукты с использованием современных AI-инструментов.</p>
-            <p>Мне нравится превращать идеи в понятные и полезные решения, которые помогают людям развивать своё дело и автоматизировать процессы.</p>
+            <p>Более 20 лет работаю в медицине.</p>
+            <p>Опыт работы с людьми научил меня внимательно слушать, понимать реальные потребности и находить практичные решения.</p>
+            <p>Сегодня эти навыки помогают мне создавать сайты, AI-помощников и цифровые продукты, которые действительно удобны и полезны для пользователей.</p>
+            <p>Мне нравится превращать идеи в понятные и работающие решения, которые помогают экспертам и малому бизнесу развивать своё дело.</p>
           </div>
-          <div class="timeline reveal reveal--delay">
-            <div class="timeline__item">
-              <div class="timeline__dot"></div>
-              <div class="timeline__content">
-                <span class="timeline__year">База</span>
-                <h3 class="timeline__title">Медицина</h3>
-                <p class="timeline__desc">Внимание к деталям и забота о людях</p>
-              </div>
-            </div>
-            <div class="timeline__item">
-              <div class="timeline__dot"></div>
-              <div class="timeline__content">
-                <span class="timeline__year">Опыт</span>
-                <h3 class="timeline__title">Нейросети и SMM</h3>
-                <p class="timeline__desc">Погружение в digital и AI-инструменты</p>
-              </div>
-            </div>
-            <div class="timeline__item">
-              <div class="timeline__dot"></div>
-              <div class="timeline__content">
-                <span class="timeline__year">Сейчас</span>
-                <h3 class="timeline__title">AI-разработка</h3>
-                <p class="timeline__desc">Создание продуктов с помощью нейросетей</p>
-              </div>
-            </div>
-            <div class="timeline__item timeline__item--active">
-              <div class="timeline__dot"></div>
-              <div class="timeline__content">
-                <span class="timeline__year">Фокус</span>
-                <h3 class="timeline__title">Digital-проекты</h3>
-                <p class="timeline__desc">Сайты, боты и MVP для экспертов</p>
-              </div>
+          <div class="timeline-wrap reveal reveal--delay">
+            <h3 class="timeline__heading">Мой путь</h3>
+            <div class="timeline" id="timeline">
+              <!-- Populated by JS -->
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust -->
+    <section class="trust section" id="trust">
+      <div class="container">
+        <div class="section-header section-header--editorial reveal">
+          <span class="section-num" aria-hidden="true">02</span>
+          <div class="section-header__body">
+            <span class="section-label">Доверие</span>
+            <h2 class="section-title">Почему мне доверяют</h2>
+          </div>
+        </div>
+        <div class="trust__grid" id="trustGrid">
+          <!-- Populated by JS -->
         </div>
       </div>
     </section>
@@ -200,7 +192,7 @@
     <section class="services section" id="services">
       <div class="container">
         <div class="section-header section-header--editorial reveal">
-          <span class="section-num" aria-hidden="true">02</span>
+          <span class="section-num" aria-hidden="true">03</span>
           <div class="section-header__body">
             <span class="section-label">Что я создаю</span>
             <h2 class="section-title">Решения, которые работают на ваш бизнес</h2>
@@ -217,7 +209,7 @@
     <section class="portfolio section section--band" id="portfolio">
       <div class="container">
         <div class="section-header section-header--editorial reveal">
-          <span class="section-num" aria-hidden="true">03</span>
+          <span class="section-num" aria-hidden="true">04</span>
           <div class="section-header__body">
             <span class="section-label">Кейсы</span>
           <h2 class="section-title">Проекты, которыми горжусь</h2>
@@ -234,7 +226,7 @@
     <section class="why section" id="why">
       <div class="container">
         <div class="section-header section-header--editorial reveal">
-          <span class="section-num" aria-hidden="true">04</span>
+          <span class="section-num" aria-hidden="true">05</span>
           <div class="section-header__body">
             <span class="section-label">Почему со мной</span>
             <h2 class="section-title">Работаю так, как хотел бы сам клиент</h2>
@@ -249,26 +241,8 @@
     <!-- Process -->
     <section class="process section" id="process">
       <div class="container">
-        <div class="process__flow reveal">
-          <div class="process__step">
-            <span class="process__num">01</span>
-            <span class="process__label">Идея</span>
-          </div>
-          <div class="process__arrow" aria-hidden="true">→</div>
-          <div class="process__step">
-            <span class="process__num">02</span>
-            <span class="process__label">Прототип</span>
-          </div>
-          <div class="process__arrow" aria-hidden="true">→</div>
-          <div class="process__step">
-            <span class="process__num">03</span>
-            <span class="process__label">Запуск</span>
-          </div>
-          <div class="process__arrow" aria-hidden="true">→</div>
-          <div class="process__step process__step--active">
-            <span class="process__num">04</span>
-            <span class="process__label">Результат</span>
-          </div>
+        <div class="process-linear reveal" id="processLinear">
+          <!-- Populated by JS -->
         </div>
       </div>
     </section>
@@ -297,7 +271,7 @@
     <section class="testimonials section" id="testimonials">
       <div class="container">
         <div class="section-header section-header--editorial reveal">
-          <span class="section-num" aria-hidden="true">05</span>
+          <span class="section-num" aria-hidden="true">06</span>
           <div class="section-header__body">
             <span class="section-label">Отзывы</span>
             <h2 class="section-title">Что говорят клиенты</h2>
@@ -326,7 +300,7 @@
         <div class="contact__grid">
           <div class="contact__info reveal">
             <div class="section-header section-header--editorial section-header--compact">
-              <span class="section-num" aria-hidden="true">06</span>
+              <span class="section-num" aria-hidden="true">07</span>
               <div class="section-header__body">
                 <span class="section-label">Контакты</span>
                 <h2 class="section-title">Давайте создадим ваш проект</h2>

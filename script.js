@@ -25,6 +25,13 @@ const FORM_CONFIG = {
   endpoint: 'lapkinanatala819@gmail.com'
 };
 
+// ─── Config: Hero portrait ───
+// Укажите путь к фото или AI-портрету, чтобы заменить инициалы «НЛ»
+const HERO_CONFIG = {
+  portraitSrc: null, // например: 'assets/hero-portrait.jpg'
+  portraitAlt: 'Наталья Лапкина'
+};
+
 // ─── Data: Services ───
 const services = [
   {
@@ -89,7 +96,8 @@ const portfolio = [
     result: 'Концепт магазина, который передаёт атмосферу бренда и готов к развитию в полноценный магазин.',
     tech: ['Lovable', 'UI/UX', 'E-commerce', 'Адаптив'],
     url: 'https://airy-sweet-shop.lovable.app/',
-    visual: 'shop',
+    previewUrl: 'https://airy-sweet-shop.lovable.app/',
+    visual: 'iframe',
     status: null
   },
   {
@@ -136,6 +144,69 @@ const portfolio = [
   }
 ];
 
+// ─── Data: Timeline (Мой путь) ───
+const timelineSteps = [
+  {
+    label: 'База',
+    title: 'Медицина',
+    desc: 'Внимание к деталям и забота о людях'
+  },
+  {
+    label: 'Рост',
+    title: 'Нейросети и SMM',
+    desc: 'Погружение в digital и AI-инструменты'
+  },
+  {
+    label: 'Старт',
+    title: 'Первые цифровые проекты',
+    desc: 'Создание первых сайтов, презентаций и AI-проектов.'
+  },
+  {
+    label: 'Сейчас',
+    title: 'AI-разработка',
+    desc: 'Создание продуктов с помощью нейросетей'
+  },
+  {
+    label: 'Фокус',
+    title: 'Digital-продукты',
+    desc: 'Сайты, боты и MVP для экспертов',
+    active: true
+  }
+];
+
+// ─── Data: Почему мне доверяют ───
+const trustCards = [
+  {
+    icon: '🩺',
+    title: 'Опыт работы с людьми',
+    desc: 'Понимаю, что за каждой задачей стоит реальный человек и его потребности.'
+  },
+  {
+    icon: '🤖',
+    title: 'Современные AI-инструменты',
+    desc: 'Использую нейросети для ускорения разработки и создания эффективных решений.'
+  },
+  {
+    icon: '🎯',
+    title: 'Практический подход',
+    desc: 'Сосредоточена на результате, а не на технологиях ради технологий.'
+  },
+  {
+    icon: '🚀',
+    title: 'Постоянное развитие',
+    desc: 'Изучаю новые инструменты и внедряю современные подходы в свои проекты.'
+  }
+];
+
+// ─── Data: Process (работа над проектом) ───
+const processSteps = [
+  'Обсуждаем задачу',
+  'Формируем решение',
+  'Создаю прототип',
+  'Вносим правки',
+  'Запускаем проект'
+];
+
 // ─── Data: Why Me ───
 const whyMe = [
   { title: 'Объясняю сложное простым языком' },
@@ -177,6 +248,10 @@ function init() {
   initCursorGlow();
   initMagnetic();
   initTiltCards();
+  initHeroPortrait();
+  renderTimeline();
+  renderTrust();
+  renderProcess();
   renderServices();
   renderPortfolio();
   renderWhyMe();
@@ -370,6 +445,78 @@ function initTiltCards() {
       card.style.transform = '';
     });
   });
+}
+
+// ─── Hero portrait ───
+function initHeroPortrait() {
+  const { portraitSrc, portraitAlt } = HERO_CONFIG;
+  if (!portraitSrc) return;
+
+  const core = document.getElementById('heroCore');
+  const img = document.getElementById('heroPortrait');
+  const initials = document.getElementById('heroInitials');
+  if (!core || !img) return;
+
+  img.src = portraitSrc;
+  img.alt = portraitAlt;
+  img.removeAttribute('hidden');
+  core.classList.add('has-portrait');
+  if (initials) initials.setAttribute('aria-hidden', 'true');
+}
+
+// ─── Render: Timeline ───
+function renderTimeline() {
+  const container = document.getElementById('timeline');
+  if (!container) return;
+
+  container.innerHTML = timelineSteps.map(step => `
+    <div class="timeline__item${step.active ? ' timeline__item--active' : ''}">
+      <div class="timeline__dot"></div>
+      <div class="timeline__content">
+        <span class="timeline__year">${step.label}</span>
+        <h3 class="timeline__title">${step.title}</h3>
+        <p class="timeline__desc">${step.desc}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ─── Render: Trust ───
+function renderTrust() {
+  const grid = document.getElementById('trustGrid');
+  if (!grid) return;
+
+  grid.innerHTML = trustCards.map((card, i) => `
+    <article class="trust-card reveal" style="transition-delay: ${i * 0.08}s">
+      <span class="trust-card__icon" aria-hidden="true">${card.icon}</span>
+      <h3 class="trust-card__title">${card.title}</h3>
+      <p class="trust-card__desc">${card.desc}</p>
+    </article>
+  `).join('');
+
+  initReveal();
+}
+
+// ─── Render: Process (Linear style) ───
+function renderProcess() {
+  const container = document.getElementById('processLinear');
+  if (!container) return;
+
+  const stepsHtml = processSteps.map((label, i) => `
+    <div class="process-linear__step${i === processSteps.length - 1 ? ' process-linear__step--last' : ''}">
+      <div class="process-linear__node">
+        <span class="process-linear__num">${i + 1}</span>
+      </div>
+      <p class="process-linear__label">${label}</p>
+    </div>
+  `).join('');
+
+  container.innerHTML = `
+    <div class="process-linear__inner">
+      <div class="process-linear__line" aria-hidden="true"></div>
+      <div class="process-linear__steps">${stepsHtml}</div>
+    </div>
+  `;
 }
 
 // ─── Render: Services ───
