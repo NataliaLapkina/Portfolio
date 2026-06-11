@@ -70,8 +70,8 @@ const portfolio = [
     status: null
   },
   {
-    title: 'Портфолио в Gamma',
-    desc: 'Интерактивная презентация специалиста и проектов.',
+    title: 'Digital-стратегия для эксперта',
+    desc: 'Комплексный план онлайн-продвижения: аудитория, воронка, контент и готовые материалы для запуска.',
     url: 'https://elaborate-dog-ed5o2px.gamma.site/',
     preview: null,
     emoji: '✨',
