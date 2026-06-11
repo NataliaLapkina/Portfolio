@@ -27,7 +27,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
   <!-- schema.org Person -->
@@ -48,6 +48,7 @@
 <body>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
   <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="mesh-bg" aria-hidden="true"></div>
   <div class="grid-bg" aria-hidden="true"></div>
   <div class="noise" aria-hidden="true"></div>
   <div class="gradient-orb gradient-orb--1" aria-hidden="true"></div>
@@ -59,10 +60,10 @@
     <nav class="nav container" aria-label="Основная навигация">
       <a href="#" class="nav__logo">НЛ</a>
       <ul class="nav__links" id="navLinks">
-        <li><a href="#about">Обо мне</a></li>
-        <li><a href="#services">Услуги</a></li>
-        <li><a href="#portfolio">Кейсы</a></li>
-        <li><a href="#contact">Контакты</a></li>
+        <li><a href="#about" data-nav>Обо мне</a></li>
+        <li><a href="#services" data-nav>Услуги</a></li>
+        <li><a href="#portfolio" data-nav>Кейсы</a></li>
+        <li><a href="#contact" data-nav>Контакты</a></li>
       </ul>
       <div class="nav__actions">
         <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
@@ -80,6 +81,7 @@
   <main>
     <!-- Hero -->
     <section class="hero section" id="hero">
+      <div class="hero__accent" aria-hidden="true"></div>
       <div class="container hero__grid">
         <div class="hero__content">
           <p class="hero__eyebrow hero-animate" style="--i:0">
@@ -142,11 +144,14 @@
     </div>
 
     <!-- About -->
-    <section class="about section" id="about">
+    <section class="about section section--band" id="about">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Обо мне</span>
-          <h2 class="section-title">От идеи до работающего продукта</h2>
+        <div class="section-header section-header--editorial reveal">
+          <span class="section-num" aria-hidden="true">01</span>
+          <div class="section-header__body">
+            <span class="section-label">Обо мне</span>
+            <h2 class="section-title">От идеи до работающего продукта</h2>
+          </div>
         </div>
         <div class="about__grid">
           <div class="about__text reveal">
@@ -194,10 +199,13 @@
     <!-- Services -->
     <section class="services section" id="services">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Что я создаю</span>
-          <h2 class="section-title">Решения, которые работают на ваш бизнес</h2>
-          <p class="section-desc">Не технологии ради технологий — а инструменты, которые приносят реальную пользу</p>
+        <div class="section-header section-header--editorial reveal">
+          <span class="section-num" aria-hidden="true">02</span>
+          <div class="section-header__body">
+            <span class="section-label">Что я создаю</span>
+            <h2 class="section-title">Решения, которые работают на ваш бизнес</h2>
+            <p class="section-desc">Не технологии ради технологий — а инструменты, которые приносят реальную пользу</p>
+          </div>
         </div>
         <div class="services__grid" id="servicesGrid">
           <!-- Populated by JS -->
@@ -206,12 +214,15 @@
     </section>
 
     <!-- Portfolio -->
-    <section class="portfolio section" id="portfolio">
+    <section class="portfolio section section--band" id="portfolio">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Кейсы</span>
-          <h2 class="section-title">Проекты, которыми горжусь</h2>
-          <p class="section-desc">Каждый проект — история о том, как идея стала работающим продуктом</p>
+        <div class="section-header section-header--editorial reveal">
+          <span class="section-num" aria-hidden="true">03</span>
+          <div class="section-header__body">
+            <span class="section-label">Кейсы</span>
+            <h2 class="section-title">Проекты, которыми горжусь</h2>
+            <p class="section-desc">Каждый проект — история о том, как идея стала работающим продуктом</p>
+          </div>
         </div>
         <div class="portfolio__grid" id="portfolioGrid">
           <!-- Populated by JS -->
@@ -222,9 +233,12 @@
     <!-- Why Me -->
     <section class="why section" id="why">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Почему со мной</span>
-          <h2 class="section-title">Работаю так, как хотел бы сам клиент</h2>
+        <div class="section-header section-header--editorial reveal">
+          <span class="section-num" aria-hidden="true">04</span>
+          <div class="section-header__body">
+            <span class="section-label">Почему со мной</span>
+            <h2 class="section-title">Работаю так, как хотел бы сам клиент</h2>
+          </div>
         </div>
         <div class="why__grid" id="whyGrid">
           <!-- Populated by JS -->
@@ -282,9 +296,12 @@
     <!-- Testimonials -->
     <section class="testimonials section" id="testimonials">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Отзывы</span>
-          <h2 class="section-title">Что говорят клиенты</h2>
+        <div class="section-header section-header--editorial reveal">
+          <span class="section-num" aria-hidden="true">05</span>
+          <div class="section-header__body">
+            <span class="section-label">Отзывы</span>
+            <h2 class="section-title">Что говорят клиенты</h2>
+          </div>
         </div>
         <div class="testimonials__slider reveal">
           <div class="testimonials__track" id="testimonialsTrack">
@@ -305,11 +322,16 @@
 
     <!-- Contact -->
     <section class="contact section" id="contact">
-      <div class="container">
+      <div class="container contact__stage">
         <div class="contact__grid">
           <div class="contact__info reveal">
-            <span class="section-label">Контакты</span>
-            <h2 class="section-title">Давайте создадим ваш проект</h2>
+            <div class="section-header section-header--editorial section-header--compact">
+              <span class="section-num" aria-hidden="true">06</span>
+              <div class="section-header__body">
+                <span class="section-label">Контакты</span>
+                <h2 class="section-title">Давайте создадим ваш проект</h2>
+              </div>
+            </div>
             <p class="contact__text">Если вам нужен сайт, бот, AI-помощник или MVP-приложение — напишите мне.</p>
             <ul class="contact__list">
               <li>
@@ -356,6 +378,7 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <span class="footer__name">Наталья Лапкина</span>
+        <span class="footer__tagline">Идея → Продукт</span>
         <span class="footer__role">AI-разработчик и создатель digital-проектов</span>
       </div>
       <p class="footer__copy">&copy; 2026</p>

@@ -154,6 +154,7 @@ function init() {
   initTheme();
   initHeader();
   initNav();
+  initScrollSpy();
   initReveal();
   initParallax();
   initScrollProgress();
@@ -218,6 +219,28 @@ function initNav() {
       burger.setAttribute('aria-expanded', 'false');
     });
   });
+}
+
+// ─── Scroll spy navigation ───
+function initScrollSpy() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('[data-nav]');
+  if (!sections.length || !navLinks.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+        });
+      });
+    },
+    { rootMargin: '-45% 0px -45% 0px', threshold: 0 }
+  );
+
+  sections.forEach(section => observer.observe(section));
 }
 
 // ─── Intersection Observer: reveal ───
@@ -337,7 +360,7 @@ function initTiltCards() {
 function renderServices() {
   const grid = document.getElementById('servicesGrid');
   grid.innerHTML = services.map((s, i) => `
-    <article class="service-card tilt-card reveal" style="transition-delay: ${i * 0.08}s">
+    <article class="service-card tilt-card reveal${i === 0 ? ' service-card--featured' : ''}" style="transition-delay: ${i * 0.08}s">
       <div class="service-card__icon">${s.icon}</div>
       <h3 class="service-card__title">${s.title}</h3>
       <p class="service-card__desc">${s.desc}</p>
