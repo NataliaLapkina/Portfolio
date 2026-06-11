@@ -94,6 +94,15 @@ const portfolio = [
     status: null
   },
   {
+    title: 'Планировщик',
+    desc: 'Мобильное приложение для Android: задачи, дневник, копилки, виджет на главный экран и напоминания.',
+    url: null,
+    linkText: 'Мобильное приложение для Android',
+    preview: null,
+    emoji: '📱',
+    status: null
+  },
+  {
     title: 'AI-репетитор',
     desc: 'Умный помощник для обучения с персонализированным подходом к каждому ученику.',
     url: null,
@@ -343,7 +352,7 @@ function renderPortfolio() {
   const arrow = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
 
   grid.innerHTML = portfolio.map((p, i) => {
-    const bentoClass = i === 0 ? 'portfolio-card--featured' : i === 5 ? 'portfolio-card--wide' : i % 2 === 1 ? 'portfolio-card--compact' : '';
+    const bentoClass = i === 0 ? 'portfolio-card--featured' : i === 6 ? 'portfolio-card--wide' : i % 2 === 1 ? 'portfolio-card--compact' : '';
     const previewContent = p.preview
       ? `<img src="${p.preview}" alt="${p.title}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'portfolio-card__preview-inner\\'>${p.emoji}</div>'">`
       : `<div class="portfolio-card__preview-inner">${p.emoji}</div>`;
@@ -354,7 +363,7 @@ function renderPortfolio() {
 
     const link = p.url
       ? `<a href="${p.url}" target="_blank" rel="noopener noreferrer" class="portfolio-card__link">Смотреть проект ${arrow}</a>`
-      : `<span class="portfolio-card__link" style="opacity:0.5;cursor:default">Скоро будет доступен</span>`;
+      : `<span class="portfolio-card__link" style="opacity:${p.linkText ? '0.85' : '0.5'};cursor:default">${p.linkText || 'Скоро будет доступен'}</span>`;
 
     return `
       <article class="portfolio-card tilt-card reveal ${bentoClass}" style="transition-delay: ${i * 0.1}s">
