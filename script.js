@@ -28,119 +28,124 @@ const FORM_CONFIG = {
 // ─── Config: Hero portrait ───
 // Укажите путь к фото или AI-портрету, чтобы заменить инициалы «НЛ»
 const HERO_CONFIG = {
-  portraitSrc: null, // например: 'assets/hero-portrait.jpg'
+  portraitSrc: null,
   portraitAlt: 'Наталья Лапкина'
 };
+
+// ─── Config: Contacts ───
+const CONTACTS = [
+  {
+    label: 'Telegram',
+    value: '@Nat1777',
+    url: 'https://t.me/Nat1777',
+    icon: '✈️'
+  },
+  {
+    label: 'WhatsApp',
+    value: 'Написать в WhatsApp',
+    url: `https://wa.me/?text=${encodeURIComponent('Здравствуйте! Хочу обсудить проект.')}`,
+    icon: '💬'
+  },
+  {
+    label: 'Email',
+    value: 'lapkinanatala819@gmail.com',
+    url: 'mailto:lapkinanatala819@gmail.com',
+    icon: '✉️'
+  }
+];
 
 // ─── Data: Services ───
 const services = [
   {
-    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>',
-    title: 'Создание сайтов',
-    desc: 'Сайт, который помогает получать обращения и клиентов — современный, понятный и заточенный под вашу аудиторию.'
+    icon: '🤖',
+    title: 'AI-ассистенты и чат-боты',
+    desc: 'Умные помощники для поддержки клиентов, обработки заявок и автоматизации диалогов 24/7.'
   },
   {
-    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
-    title: 'Telegram-боты',
-    desc: 'Автоматизация общения с клиентами и приёма заявок — бот работает 24/7, пока вы занимаетесь делом.'
+    icon: '🚀',
+    title: 'Автоматизация бизнес-процессов',
+    desc: 'Связка инструментов, которая убирает ручную работу и ускоряет операционные процессы.'
   },
   {
-    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.57-3.25 3.92L12 22"/><path d="M12 2a4 4 0 0 0-4 4c0 1.95 1.4 3.57 3.25 3.92"/><circle cx="12" cy="6" r="1"/></svg>',
-    title: 'AI-ассистенты',
-    desc: 'Умные помощники, которые экономят время и снимают рутину — ответы на вопросы, обработка заявок, контент.'
+    icon: '🌐',
+    title: 'Сайты и веб-приложения',
+    desc: 'Современные цифровые витрины и веб-продукты, заточенные под привлечение и конверсию.'
   },
   {
-    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>',
-    title: 'Автоматизация процессов',
-    desc: 'Связка инструментов, которая убирает ручную работу и ускоряет ваши бизнес-процессы.'
+    icon: '📈',
+    title: 'CRM и системы сопровождения клиентов',
+    desc: 'Инструменты для ведения базы, контроля коммуникаций и аналитики взаимодействий.'
   },
   {
-    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>',
-    title: 'MVP-приложения',
-    desc: 'Быстрый запуск минимального продукта для проверки идеи — без месяцев разработки и огромных бюджетов.'
-  },
-  {
-    icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>',
-    title: 'AI-контент и презентации',
-    desc: 'Презентации, тексты и визуалы с помощью AI — профессионально и быстро, для вашего бренда.'
+    icon: '⚡',
+    title: 'AI-инструменты для экспертов и малого бизнеса',
+    desc: 'Практичные решения на базе нейросетей — от контента до MVP без лишней сложности.'
   }
 ];
 
-// ─── Data: Portfolio (кейсы Behance-формата) ───
+// ─── Data: Portfolio ───
 const portfolio = [
   {
-    title: 'Сайт логопеда',
-    task: 'Специалисту нужен современный сайт, который вызывает доверие у родителей и принимает записи онлайн.',
-    solution: 'Лендинг с услугами, дипломами, блоком доверия и формой записи — спокойная визуальная среда без перегруза.',
-    result: 'Готовый сайт для публикации: родители видят экспертизу и могут записаться в один клик.',
-    tech: ['HTML', 'CSS', 'JavaScript', 'Адаптив', 'SEO'],
-    url: 'https://natalialapkina.github.io/site-logoped-final/',
-    previewUrl: 'https://natalialapkina.github.io/site-logoped-final/',
-    visual: 'iframe',
-    status: null
+    title: 'Автоматизация поиска клиентов',
+    desc: 'Система автоматического поиска потенциальных клиентов, email-рассылок и контроля коммуникаций.',
+    features: [
+      'CRM для клиентской базы',
+      'автоматическая email-рассылка',
+      'шаблоны сообщений',
+      'система статусов',
+      'контроль последующих касаний',
+      'аналитика взаимодействий'
+    ],
+    tech: ['Google Sheets', 'Gmail', 'Google Apps Script', 'AI'],
+    status: 'Реализованный проект',
+    statusType: 'done',
+    visual: 'crm',
+    url: null
   },
   {
-    title: 'Digital-стратегия для эксперта',
-    task: 'Нутрициологу нужен понятный план выхода в онлайн и система привлечения клиентов.',
-    solution: 'Интерактивная презентация: ЦА, воронка продаж, контент-план, тексты и визуальная стратегия.',
-    result: 'Готовая дорожная карта запуска — от первого поста до первых заявок.',
-    tech: ['Gamma', 'Контент-стратегия', 'Воронка', 'SMM'],
-    url: 'https://elaborate-dog-ed5o2px.gamma.site/',
-    visual: 'strategy',
-    status: null
+    title: 'AI-репетитор по русскому языку',
+    desc: 'Интерактивная образовательная платформа с AI-помощником и голосовым сопровождением.',
+    tech: ['JavaScript', 'AI', 'Web Speech API'],
+    status: 'Рабочий MVP',
+    statusType: 'mvp',
+    visual: 'aitutor',
+    url: null
+  },
+  {
+    title: 'Платформа для нутрициолога',
+    desc: 'Личный кабинет специалиста и клиента для сопровождения и контроля результатов.',
+    tech: ['Web App', 'CRM', 'AI'],
+    status: 'В разработке',
+    statusType: 'wip',
+    visual: 'nutritionist',
+    url: null
+  },
+  {
+    title: 'Сайт логопеда',
+    desc: 'Современный сайт специалиста с SEO-оптимизацией и системой заявок.',
+    tech: ['HTML', 'CSS', 'JavaScript', 'SEO'],
+    status: 'Реализованный проект',
+    statusType: 'done',
+    visual: 'logoped',
+    url: 'https://natalialapkina.github.io/site-logoped-final/'
   },
   {
     title: 'Интернет-магазин сладостей',
-    task: 'Показать концепцию магазина ручной работы с уютным, но современным интерфейсом.',
-    solution: 'Витрина с каталогом, акцентами на продукт и лёгким путём к заказу.',
-    result: 'Концепт магазина, который передаёт атмосферу бренда и готов к развитию в полноценный магазин.',
+    desc: 'Концепция магазина ручной работы с уютным, но современным интерфейсом, каталогом и путём к заказу.',
     tech: ['Lovable', 'UI/UX', 'E-commerce', 'Адаптив'],
-    url: 'https://airy-sweet-shop.lovable.app/',
-    previewUrl: 'https://airy-sweet-shop.lovable.app/',
-    visual: 'iframe',
-    status: null
+    status: 'Реализованный проект',
+    statusType: 'done',
+    visual: 'shop',
+    url: 'https://airy-sweet-shop.lovable.app/'
   },
   {
-    title: 'Медленное озеро',
-    task: 'Создать релакс-игру для отдыха — без установки и сложных правил.',
-    solution: 'Интерактивный холст с анимацией воды, огоньками и атмосферой ночного озера.',
-    result: 'Игра в браузере, которая помогает расслабиться за пару минут.',
-    tech: ['HTML5 Canvas', 'JavaScript', 'CSS-анимации'],
-    url: 'https://natalialapkina.github.io/Medlennoe_ozero/',
-    previewUrl: 'https://natalialapkina.github.io/Medlennoe_ozero/',
-    visual: 'iframe',
-    status: null
-  },
-  {
-    title: 'Планировщик',
-    task: 'Нужно мобильное приложение для задач, заметок и личных целей на каждый день.',
-    solution: 'Android-приложение с задачами, дневником, копилками, виджетом и напоминаниями.',
-    result: 'Рабочий MVP для личного использования — основа для публикации в магазине приложений.',
-    tech: ['Kotlin', 'Jetpack Compose', 'Room', 'Android Widget'],
-    url: null,
-    linkText: 'Мобильное приложение для Android',
-    visual: 'planner',
-    status: null
-  },
-  {
-    title: 'AI-репетитор',
-    task: 'Помочь ученикам получать персонализированную поддержку в обучении через AI.',
-    solution: 'Умный помощник с адаптацией под уровень ученика и интерактивным форматом занятий.',
-    result: 'MVP в разработке — прототип логики и интерфейса диалога.',
-    tech: ['AI', 'JavaScript', 'MVP', 'Chat UI'],
-    url: null,
-    visual: 'aitutor',
-    status: 'В разработке'
-  },
-  {
-    title: 'Личный кабинет нутрициолога',
-    task: 'Нутрициологу нужен инструмент для ведения клиентов без сложных таблиц и CRM.',
-    solution: 'Два связанных интерфейса: спокойный дневник для клиента и кабинет специалиста с карточками и приглашениями.',
-    result: 'MVP с раздельными кабинетами — клиент ведёт записи, специалист видит прогресс и оставляет рекомендации.',
-    tech: ['HTML', 'CSS', 'JavaScript', 'localStorage', 'MVP'],
-    url: null,
-    visual: 'nutritionist',
-    status: 'В разработке'
+    title: 'AI-боты и автоматизация',
+    desc: 'Разработка сценариев, архитектуры и логики AI-ассистентов для бизнеса.',
+    tech: ['GPT', 'Telegram', 'AI Automation'],
+    status: 'Реализованные проекты',
+    statusType: 'done',
+    visual: 'bots',
+    url: null
   }
 ];
 
@@ -174,31 +179,16 @@ const timelineSteps = [
   }
 ];
 
-// ─── Data: Почему мне доверяют ───
-const trustCards = [
-  {
-    icon: '🩺',
-    title: 'Опыт работы с людьми',
-    desc: 'Понимаю, что за каждой задачей стоит реальный человек и его потребности.'
-  },
-  {
-    icon: '🤖',
-    title: 'Современные AI-инструменты',
-    desc: 'Использую нейросети для ускорения разработки и создания эффективных решений.'
-  },
-  {
-    icon: '🎯',
-    title: 'Практический подход',
-    desc: 'Сосредоточена на результате, а не на технологиях ради технологий.'
-  },
-  {
-    icon: '🚀',
-    title: 'Постоянное развитие',
-    desc: 'Изучаю новые инструменты и внедряю современные подходы в свои проекты.'
-  }
+// ─── Data: Why Me ───
+const whyMe = [
+  { title: 'Понимаю бизнес-задачу, а не только код' },
+  { title: 'Использую современные AI-инструменты' },
+  { title: 'Создаю понятные и удобные интерфейсы' },
+  { title: 'Помогаю автоматизировать рутину' },
+  { title: 'Довожу проекты до рабочего результата' }
 ];
 
-// ─── Data: Process (работа над проектом) ───
+// ─── Data: Process ───
 const processSteps = [
   'Обсуждаем задачу',
   'Формируем решение',
@@ -207,15 +197,7 @@ const processSteps = [
   'Запускаем проект'
 ];
 
-// ─── Data: Why Me ───
-const whyMe = [
-  { title: 'Объясняю сложное простым языком' },
-  { title: 'Быстро создаю MVP' },
-  { title: 'Использую современные AI-инструменты' },
-  { title: 'Сопровождаю проект до запуска' }
-];
-
-// ─── Data: Testimonials (легко редактируются) ───
+// ─── Data: Testimonials ───
 const testimonials = [
   {
     name: 'Елена Ивановна',
@@ -250,11 +232,11 @@ function init() {
   initTiltCards();
   initHeroPortrait();
   renderTimeline();
-  renderTrust();
-  renderProcess();
   renderServices();
   renderPortfolio();
   renderWhyMe();
+  renderProcess();
+  renderContacts();
   initTestimonials();
   initStats();
   initForm();
@@ -481,23 +463,220 @@ function renderTimeline() {
   `).join('');
 }
 
-// ─── Render: Trust ───
-function renderTrust() {
-  const grid = document.getElementById('trustGrid');
-  if (!grid) return;
-
-  grid.innerHTML = trustCards.map((card, i) => `
-    <article class="trust-card reveal" style="transition-delay: ${i * 0.08}s">
-      <span class="trust-card__icon" aria-hidden="true">${card.icon}</span>
-      <h3 class="trust-card__title">${card.title}</h3>
-      <p class="trust-card__desc">${card.desc}</p>
+// ─── Render: Services ───
+function renderServices() {
+  const grid = document.getElementById('servicesGrid');
+  grid.innerHTML = services.map((s, i) => `
+    <article class="service-card tilt-card reveal${i === 0 ? ' service-card--featured' : ''}" style="transition-delay: ${i * 0.08}s">
+      <div class="service-card__icon service-card__icon--emoji" aria-hidden="true">${s.icon}</div>
+      <h3 class="service-card__title">${s.title}</h3>
+      <p class="service-card__desc">${s.desc}</p>
     </article>
   `).join('');
 
   initReveal();
+  initTiltCards();
 }
 
-// ─── Render: Process (Linear style) ───
+// ─── Unified case cover wrapper ───
+function caseCoverInner(content) {
+  return `
+    <div class="case-preview case-preview--zoom">
+      <div class="case-cover">
+        <div class="case-cover__frame">${content}</div>
+      </div>
+    </div>`;
+}
+
+// ─── Case study visuals ───
+function renderCaseVisual(project) {
+  switch (project.visual) {
+    case 'crm': return renderCaseCrmMockup();
+    case 'aitutor': return renderCaseAiTutorMockup();
+    case 'nutritionist': return renderCaseNutritionistMockup();
+    case 'logoped': return renderCaseLogopedMockup();
+    case 'shop': return renderCaseShopMockup();
+    case 'bots': return renderCaseBotsMockup();
+    default: return '';
+  }
+}
+
+function renderCaseCrmMockup() {
+  return caseCoverInner(`
+    <div class="pui pui--crm">
+      <div class="pui-crm">
+        <aside class="pui-crm__sidebar" aria-hidden="true">
+          <span class="pui-crm__logo">CRM</span>
+          <nav class="pui-crm__nav">
+            <span class="is-active">Клиенты</span>
+            <span>Рассылки</span>
+            <span>Шаблоны</span>
+            <span>Аналитика</span>
+          </nav>
+        </aside>
+        <main class="pui-crm__main">
+          <header class="pui-crm__header">
+            <div>
+              <h4>База клиентов</h4>
+              <p>Автоматизация поиска и касаний</p>
+            </div>
+            <span class="pui-crm__pill">AI · Gmail · Sheets</span>
+          </header>
+          <div class="pui-crm__stats">
+            <div><b>128</b><small>лидов</small></div>
+            <div><b>34</b><small>в работе</small></div>
+            <div><b>89%</b><small>доставка</small></div>
+          </div>
+          <div class="pui-crm__table" aria-hidden="true">
+            <div class="pui-crm__row pui-crm__row--head"><span>Клиент</span><span>Статус</span><span>Касание</span></div>
+            <div class="pui-crm__row"><span>ООО «Старт»</span><span class="status status--hot">Горячий</span><span>Сегодня</span></div>
+            <div class="pui-crm__row"><span>ИП Козлова</span><span class="status status--warm">Прогрев</span><span>Завтра</span></div>
+            <div class="pui-crm__row"><span>Агентство X</span><span class="status status--new">Новый</span><span>Через 3 дня</span></div>
+            <div class="pui-crm__row"><span>Студия Y</span><span class="status status--done">Ответил</span><span>Вчера</span></div>
+          </div>
+          <div class="pui-crm__flow" aria-hidden="true">
+            <span>Поиск</span><i>→</i><span>Email</span><i>→</i><span>Статус</span><i>→</i><span>Аналитика</span>
+          </div>
+        </main>
+      </div>
+    </div>`);
+}
+
+function renderCaseLogopedMockup() {
+  return caseCoverInner(`
+    <div class="pui pui--logoped">
+      <div class="pui-logoped">
+        <header class="pui-logoped__nav">
+          <span class="pui-logoped__brand">Логопед</span>
+          <nav aria-hidden="true"><span>Услуги</span><span>О специалисте</span><span>Отзывы</span></nav>
+          <span class="pui-logoped__cta">Записаться</span>
+        </header>
+        <div class="pui-logoped__hero">
+          <div>
+            <span class="pui-logoped__tag">Дефектолог · Логопед</span>
+            <h4>Помогаю детям<br>говорить уверенно</h4>
+            <p>Индивидуальные занятия, онлайн-запись и спокойная атмосфера для родителей.</p>
+          </div>
+          <div class="pui-logoped__card" aria-hidden="true">
+            <b>Ближайшая запись</b>
+            <span>Вт, 14:00</span>
+            <small>SEO · заявки онлайн</small>
+          </div>
+        </div>
+        <div class="pui-logoped__features">
+          <span>✓ Дипломы</span><span>✓ Опыт 10+ лет</span><span>✓ Онлайн-запись</span>
+        </div>
+      </div>
+    </div>`);
+}
+
+function renderCaseBotsMockup() {
+  return caseCoverInner(`
+    <div class="pui pui--bots">
+      <div class="pui-bots">
+        <div class="pui-bots__chat">
+          <header aria-hidden="true"><span>Telegram Bot</span><small>онлайн</small></header>
+          <div class="pui-bots__messages">
+            <div class="pui-bots__msg pui-bots__msg--user">Хочу записаться на консультацию</div>
+            <div class="pui-bots__msg pui-bots__msg--bot">Отлично! Уточните удобное время — я подберу слот и отправлю подтверждение.</div>
+            <div class="pui-bots__msg pui-bots__msg--user">Завтра после 15:00</div>
+          </div>
+          <div class="pui-bots__input" aria-hidden="true"><span>Сообщение…</span></div>
+        </div>
+        <div class="pui-bots__engine" aria-hidden="true">
+          <div class="pui-bots__node pui-bots__node--tg">Telegram</div>
+          <div class="pui-bots__line"></div>
+          <div class="pui-bots__node pui-bots__node--ai">GPT · AI</div>
+          <div class="pui-bots__line"></div>
+          <div class="pui-bots__node pui-bots__node--auto">Automation</div>
+          <ul class="pui-bots__list">
+            <li>Сценарии диалогов</li>
+            <li>Обработка заявок</li>
+            <li>Интеграции</li>
+          </ul>
+        </div>
+      </div>
+    </div>`);
+}
+
+function renderCaseShopMockup() {
+  const marshmallowSvg = (variant) => {
+    const fills = {
+      raspberry: ['#fce7f3', '#f9a8d4', '#be185d'],
+      chocolate: ['#fef3c7', '#92400e', '#451a03'],
+      lavender: ['#ede9fe', '#a78bfa', '#5b21b6']
+    };
+    const [a, b, c] = fills[variant];
+    return `<svg class="pui-shop__sweet-svg" viewBox="0 0 80 80" fill="none" aria-hidden="true">
+      <ellipse cx="40" cy="58" rx="28" ry="8" fill="${c}" opacity="0.12"/>
+      <rect x="22" y="28" width="36" height="28" rx="10" fill="${a}" stroke="${b}" stroke-width="1.5"/>
+      <rect x="26" y="20" width="28" height="14" rx="8" fill="#fff" stroke="${b}" stroke-width="1.2" opacity="0.95"/>
+      <circle cx="32" cy="38" r="3" fill="${b}" opacity="0.35"/>
+      <circle cx="48" cy="42" r="2.5" fill="${b}" opacity="0.25"/>
+    </svg>`;
+  };
+
+  return caseCoverInner(`
+    <div class="pui pui--shop">
+      <div class="pui-shop">
+        <header class="pui-shop__nav">
+          <span class="pui-shop__logo">облакозефир</span>
+          <nav class="pui-shop__links" aria-hidden="true">
+            <span>Каталог</span><span>Доставка</span><span>О нас</span>
+          </nav>
+          <span class="pui-shop__cart">Корзина <em>2</em></span>
+        </header>
+        <div class="pui-shop__hero">
+          <div class="pui-shop__hero-copy">
+            <span class="pui-shop__badge">Партия дня</span>
+            <h4 class="pui-shop__title">Зефир, который<br><em>тает медленно</em></h4>
+            <p class="pui-shop__lead">Взбиваем вручную из фруктового пюре — без красителей и лишнего сахара.</p>
+            <div class="pui-shop__cta-row">
+              <span class="pui-shop__btn">В каталог</span>
+              <span class="pui-shop__stats"><b>6</b> сортов · <b>100%</b> натурально</span>
+            </div>
+          </div>
+          <div class="pui-shop__hero-art" aria-hidden="true">
+            <svg viewBox="0 0 200 180" fill="none" class="pui-shop__hero-svg">
+              <circle cx="100" cy="90" r="70" fill="url(#shopGlow)" opacity="0.5"/>
+              <rect x="55" y="55" width="90" height="70" rx="22" fill="#fff5f5" stroke="#f9a8d4" stroke-width="2"/>
+              <rect x="65" y="38" width="70" height="32" rx="16" fill="#fff" stroke="#fbcfe8" stroke-width="1.5"/>
+              <ellipse cx="100" cy="130" rx="50" ry="12" fill="#be185d" opacity="0.1"/>
+              <circle cx="78" cy="78" r="6" fill="#f472b6" opacity="0.4"/>
+              <circle cx="122" cy="88" r="5" fill="#fb7185" opacity="0.35"/>
+              <defs>
+                <radialGradient id="shopGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(100 90) rotate(90) scale(70)">
+                  <stop stop-color="#fce7f3"/><stop offset="1" stop-color="#fce7f3" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div class="pui-shop__section-head">
+          <h5>Любимцы публики</h5>
+          <span>весь каталог →</span>
+        </div>
+        <div class="pui-shop__grid">
+          <article class="pui-shop__card">
+            <div class="pui-shop__card-img pui-shop__card-img--pink">${marshmallowSvg('raspberry')}</div>
+            <b>Малиновое облако</b>
+            <small>620 ₽ · 200 г</small>
+          </article>
+          <article class="pui-shop__card">
+            <div class="pui-shop__card-img pui-shop__card-img--choco">${marshmallowSvg('chocolate')}</div>
+            <b>В тёмном шоколаде</b>
+            <small>780 ₽ · 240 г</small>
+          </article>
+          <article class="pui-shop__card">
+            <div class="pui-shop__card-img pui-shop__card-img--lav">${marshmallowSvg('lavender')}</div>
+            <b>Лаванда и мёд</b>
+            <small>690 ₽ · 200 г</small>
+          </article>
+        </div>
+      </div>
+    </div>`);
+}
+
 function renderProcess() {
   const container = document.getElementById('processLinear');
   if (!container) return;
@@ -519,217 +698,48 @@ function renderProcess() {
   `;
 }
 
-// ─── Render: Services ───
-function renderServices() {
-  const grid = document.getElementById('servicesGrid');
-  grid.innerHTML = services.map((s, i) => `
-    <article class="service-card tilt-card reveal${i === 0 ? ' service-card--featured' : ''}" style="transition-delay: ${i * 0.08}s">
-      <div class="service-card__icon">${s.icon}</div>
-      <h3 class="service-card__title">${s.title}</h3>
-      <p class="service-card__desc">${s.desc}</p>
-    </article>
-  `).join('');
-
-  initReveal();
-  initTiltCards();
-}
-// ─── Case study visuals ───
-function renderCaseVisual(project) {
-  switch (project.visual) {
-    case 'iframe': return renderCaseIframe(project);
-    case 'strategy': return renderCaseStrategyMockup();
-    case 'shop': return renderCaseShopMockup();
-    case 'planner': return renderCasePlannerMockup();
-    case 'aitutor': return renderCaseAiTutorMockup();
-    case 'nutritionist': return renderCaseNutritionistMockup();
-    default: return '';
-  }
-}
-
-function renderCaseIframe(project) {
-  const url = project.previewUrl || project.url;
-  return `
-    <div class="case-preview case-preview--zoom">
-      <div class="case-preview__frame case-preview__frame--wide">
-        <iframe src="${url}" title="Превью: ${project.title}" loading="lazy" tabindex="-1"></iframe>
-      </div>
-    </div>`;
-}
-
-function renderCaseStrategyMockup() {
-  return `
-    <div class="case-preview case-preview--zoom">
-      <div class="case-preview__frame case-preview__frame--wide pui pui--strategy">
-        <div class="pui-strategy">
-          <aside class="pui-strategy__sidebar" aria-hidden="true">
-            <div class="pui-strategy__thumb is-active"><span>01</span><small>Обложка</small></div>
-            <div class="pui-strategy__thumb"><span>02</span><small>Аудитория</small></div>
-            <div class="pui-strategy__thumb"><span>03</span><small>Воронка</small></div>
-            <div class="pui-strategy__thumb"><span>04</span><small>Контент</small></div>
-            <div class="pui-strategy__thumb"><span>05</span><small>Визуалы</small></div>
-          </aside>
-          <main class="pui-strategy__slide">
-            <div class="pui-strategy__slide-bg"></div>
-            <div class="pui-strategy__slide-inner">
-              <div class="pui-strategy__copy">
-                <p class="pui-strategy__tag">Gamma · Digital-стратегия</p>
-                <h4 class="pui-strategy__title">Стратегия выхода<br>нутрициолога в онлайн</h4>
-                <p class="pui-strategy__lead">Комплексный план развития онлайн-присутствия для эксперта с 5-летним опытом</p>
-                <div class="pui-strategy__pills">
-                  <span>ЦА</span><span>Воронка VK</span><span>Контент-план</span>
-                </div>
-              </div>
-              <div class="pui-strategy__illus" aria-hidden="true">
-                <svg class="pui-strategy__svg" viewBox="0 0 320 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="160" cy="140" r="110" fill="url(#sg1)" opacity="0.35"/>
-                  <ellipse cx="160" cy="200" rx="90" ry="28" fill="#0d9488" opacity="0.12"/>
-                  <rect x="72" y="48" width="176" height="112" rx="16" fill="#fff" fill-opacity="0.92" stroke="#0d9488" stroke-opacity="0.2"/>
-                  <rect x="88" y="64" width="72" height="8" rx="4" fill="#0d9488" opacity="0.5"/>
-                  <rect x="88" y="80" width="120" height="6" rx="3" fill="#134e4a" opacity="0.25"/>
-                  <rect x="88" y="92" width="100" height="6" rx="3" fill="#134e4a" opacity="0.15"/>
-                  <circle cx="220" cy="100" r="28" fill="url(#sg2)"/>
-                  <path d="M120 168 L160 128 L200 148 L240 118" stroke="#f97316" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle cx="120" cy="168" r="6" fill="#0d9488"/>
-                  <circle cx="160" cy="128" r="6" fill="#14b8a6"/>
-                  <circle cx="200" cy="148" r="6" fill="#f97316"/>
-                  <circle cx="240" cy="118" r="6" fill="#fb7185"/>
-                  <rect x="88" y="178" width="56" height="36" rx="8" fill="#ecfdf5" stroke="#0d9488" stroke-opacity="0.3"/>
-                  <rect x="152" y="178" width="56" height="36" rx="8" fill="#fff7ed" stroke="#f97316" stroke-opacity="0.3"/>
-                  <rect x="216" y="178" width="56" height="36" rx="8" fill="#fdf2f8" stroke="#fb7185" stroke-opacity="0.3"/>
-                  <defs>
-                    <linearGradient id="sg1" x1="50" y1="30" x2="270" y2="250"><stop stop-color="#0d9488"/><stop offset="1" stop-color="#f97316"/></linearGradient>
-                    <linearGradient id="sg2" x1="192" y1="72" x2="248" y2="128"><stop stop-color="#5eead4"/><stop offset="1" stop-color="#fdba74"/></linearGradient>
-                  </defs>
-                </svg>
-              </div>
-            </div>
-            <div class="pui-strategy__funnel">
-              <div class="pui-strategy__funnel-step" style="--w:100%">Привлечение</div>
-              <div class="pui-strategy__funnel-step" style="--w:82%">Вовлечение</div>
-              <div class="pui-strategy__funnel-step" style="--w:64%">Прогрев</div>
-              <div class="pui-strategy__funnel-step" style="--w:46%">Продажа</div>
-            </div>
-          </main>
-        </div>
-      </div>
-    </div>`;
-}
-
-function renderCaseShopMockup() {
-  return `
-    <div class="case-preview case-preview--zoom">
-      <div class="case-preview__frame case-preview__frame--wide pui pui--shop">
-        <div class="pui__body">
-          <div class="pui__shop-hero">
-            <div>
-              <p class="pui__eyebrow">Ручная работа</p>
-              <h4 class="pui__h">Сладости с душой</h4>
-            </div>
-            <div class="pui__btn-fake pui__btn-fake--shop">В корзину</div>
-          </div>
-          <div class="pui__shop-grid">
-            <div class="pui__product"><div class="pui__product-img"></div><b>Зефир</b><small>450 ₽</small></div>
-            <div class="pui__product"><div class="pui__product-img pui__product-img--2"></div><b>Маршмеллоу</b><small>380 ₽</small></div>
-            <div class="pui__product"><div class="pui__product-img pui__product-img--3"></div><b>Набор</b><small>890 ₽</small></div>
-            <div class="pui__product"><div class="pui__product-img pui__product-img--4"></div><b>Подарок</b><small>1200 ₽</small></div>
-          </div>
-        </div>
-      </div>
-    </div>`;
-}
-
-function renderCasePlannerMockup() {
-  return `
-    <div class="case-preview case-preview--zoom">
-      <div class="case-preview__duo case-preview__duo--phone">
-        <div class="case-device">
-          <span class="case-device__label">Задачи</span>
-          <div class="case-preview__frame case-preview__frame--phone pui pui--planner">
-            <div class="pui__phone-notch"></div>
-            <div class="pui__body">
-              <h4 class="pui__h">Сегодня</h4>
-              <div class="pui__task pui__task--done"><span></span> Записать идеи</div>
-              <div class="pui__task"><span></span> Созвон с клиентом</div>
-              <div class="pui__task"><span></span> Обновить портфолио</div>
-              <div class="pui__nav"><i></i><i></i><i class="is-active"></i><i></i></div>
-            </div>
-          </div>
-        </div>
-        <div class="case-device">
-          <span class="case-device__label">Копилки</span>
-          <div class="case-preview__frame case-preview__frame--phone pui pui--planner">
-            <div class="pui__phone-notch"></div>
-            <div class="pui__body">
-              <h4 class="pui__h">Цели</h4>
-              <div class="pui__piggy"><div class="pui__piggy-fill" style="width:68%"></div></div>
-              <p class="pui__caption">Отпуск · 68%</p>
-              <div class="pui__piggy"><div class="pui__piggy-fill" style="width:34%"></div></div>
-              <p class="pui__caption">Курсы · 34%</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>`;
-}
-
 function renderCaseAiTutorMockup() {
-  return `
-    <div class="case-preview case-preview--zoom">
-      <div class="case-preview__frame pui pui--ai">
-        <div class="pui__body">
-          <div class="pui__chat">
-            <div class="pui__bubble pui__bubble--bot">Привет! Что будем повторять сегодня?</div>
-            <div class="pui__bubble pui__bubble--user">Правила согласования в русском языке</div>
-            <div class="pui__bubble pui__bubble--bot">Отлично. Начнём с простого примера…</div>
+  return caseCoverInner(`
+    <div class="pui pui--ai">
+      <div class="pui-ai">
+        <header class="pui-ai__header">
+          <div>
+            <span class="pui-ai__tag">AI-репетитор · Русский язык</span>
+            <h4>Интерактивное занятие</h4>
           </div>
-          <div class="pui__input"><span>Сообщение…</span><button type="button">→</button></div>
+          <button type="button" class="pui-ai__voice" aria-hidden="true">🎙️ Голос</button>
+        </header>
+        <div class="pui-ai__lesson">
+          <div class="pui-ai__bubble pui-ai__bubble--bot">Привет! Сегодня разберём правила согласования. Слушайте пример и повторите вслух.</div>
+          <div class="pui-ai__bubble pui-ai__bubble--user">Красивая цветная картина</div>
+          <div class="pui-ai__bubble pui-ai__bubble--bot">Верно! Прилагательное согласуется с существительным в роде, числе и падеже.</div>
+        </div>
+        <div class="pui-ai__toolbar" aria-hidden="true">
+          <span>Web Speech API</span><span>AI-обратная связь</span><span>Адаптивный уровень</span>
         </div>
       </div>
-    </div>`;
+    </div>`);
 }
 
 function renderCaseNutritionistMockup() {
-  return `
-    <div class="case-preview case-preview--zoom">
-      <div class="case-preview__duo">
-        <div class="case-device">
-          <span class="case-device__label">Кабинет клиента</span>
-          <div class="case-preview__frame case-preview__frame--tall pui pui--nutri pui--client">
-            <div class="pui__body">
-              <p class="pui__eyebrow">Спокойное наблюдение</p>
-              <h4 class="pui__h">Ваш день</h4>
-              <div class="pui__card pui__card--nutri">
-                <b>Как вы себя чувствуете?</b>
-                <div class="pui__chips">
-                  <span class="is-on">Спокойно</span><span>Усталость</span><span>Энергия</span>
-                </div>
-              </div>
-              <div class="pui__card pui__card--nutri pui__card--muted">
-                <small>Запись за сегодня</small>
-                <p>Завтрак · обед · вода</p>
-              </div>
-              <div class="pui__tabbar"><span class="is-on">Сегодня</span><span>Записи</span><span>Чат</span></div>
-            </div>
-          </div>
+  return caseCoverInner(`
+    <div class="pui pui--nutri-cover">
+      <div class="pui-nutri-cover">
+        <div class="pui-nutri-cover__panel pui-nutri-cover__panel--client">
+          <span class="pui-nutri-cover__label">Клиент</span>
+          <h4>Дневник питания</h4>
+          <div class="pui-nutri-cover__card"><b>Самочувствие</b><span>Спокойно · вода 1.5 л</span></div>
+          <div class="pui-nutri-cover__card"><b>Записи за день</b><span>Завтрак · обед · перекус</span></div>
         </div>
-        <div class="case-device">
-          <span class="case-device__label">Кабинет специалиста</span>
-          <div class="case-preview__frame case-preview__frame--tall pui pui--nutri pui--pro">
-            <div class="pui__body">
-              <p class="pui__eyebrow">Вход специалиста</p>
-              <h4 class="pui__h">Кабинет нутрициолога</h4>
-              <div class="pui__client-row"><span>Анна К.</span><small>запись сегодня</small></div>
-              <div class="pui__client-row"><span>Мария С.</span><small>новый клиент</small></div>
-              <div class="pui__card pui__card--nutri">
-                <b>Приглашение клиенту</b>
-                <div class="pui__field"></div>
-                <div class="pui__btn-fake">Создать приглашение</div>
-              </div>
-            </div>
-          </div>
+        <div class="pui-nutri-cover__panel pui-nutri-cover__panel--pro">
+          <span class="pui-nutri-cover__label">Специалист</span>
+          <h4>Кабинет нутрициолога</h4>
+          <div class="pui-nutri-cover__row"><span>Анна К.</span><small>активна</small></div>
+          <div class="pui-nutri-cover__row"><span>Мария С.</span><small>новый клиент</small></div>
+          <div class="pui-nutri-cover__card"><b>CRM · сопровождение</b><span>прогресс и рекомендации</span></div>
         </div>
       </div>
-    </div>`;
+    </div>`);
 }
 
 function renderPortfolio() {
@@ -737,39 +747,34 @@ function renderPortfolio() {
   const arrow = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>';
 
   grid.innerHTML = portfolio.map((p, i) => {
+    const statusType = p.statusType || 'done';
     const statusBadge = p.status
-      ? `<span class="case-study__status">${p.status}</span>`
+      ? `<span class="case-study__status case-study__status--${statusType}">${p.status}</span>`
       : '';
 
     const cta = p.url
-      ? `<a href="${p.url}" target="_blank" rel="noopener noreferrer" class="btn btn--primary case-study__cta">Открыть проект ${arrow}</a>`
-      : `<span class="case-study__cta case-study__cta--muted">${p.linkText || 'Скоро будет доступен'}</span>`;
+      ? `<a href="${p.url}" target="_blank" rel="noopener noreferrer" class="btn btn--ghost case-study__cta">Открыть проект ${arrow}</a>`
+      : '';
 
     const techTags = p.tech.map(t => `<li>${t}</li>`).join('');
 
+    const featuresHtml = p.features ? `
+      <div class="case-study__features">
+        <h4 class="case-study__features-title">Что реализовано</h4>
+        <ul class="case-study__features-list">${p.features.map(f => `<li>${f}</li>`).join('')}</ul>
+      </div>` : '';
+
     return `
-      <article class="case-study reveal" style="transition-delay: ${i * 0.08}s">
+      <article class="case-study case-study--card reveal" style="transition-delay: ${i * 0.08}s">
         <div class="case-study__visual-wrap">
           ${renderCaseVisual(p)}
           ${statusBadge}
         </div>
         <div class="case-study__content">
           <h3 class="case-study__title">${p.title}</h3>
-          <dl class="case-study__meta">
-            <div class="case-study__meta-item">
-              <dt>Задача клиента</dt>
-              <dd>${p.task}</dd>
-            </div>
-            <div class="case-study__meta-item">
-              <dt>Решение</dt>
-              <dd>${p.solution}</dd>
-            </div>
-            <div class="case-study__meta-item">
-              <dt>Результат</dt>
-              <dd>${p.result}</dd>
-            </div>
-          </dl>
-          <ul class="case-study__tech" aria-label="Технологии">${techTags}</ul>
+          <p class="case-study__desc">${p.desc}</p>
+          ${featuresHtml}
+          <ul class="case-study__tech" aria-label="Стек">${techTags}</ul>
           ${cta}
         </div>
       </article>
@@ -783,7 +788,7 @@ function renderPortfolio() {
 function renderWhyMe() {
   const grid = document.getElementById('whyGrid');
   grid.innerHTML = whyMe.map((w, i) => `
-    <article class="why-card tilt-card reveal" style="transition-delay: ${i * 0.08}s">
+    <article class="why-card why-card--pro tilt-card reveal" style="transition-delay: ${i * 0.08}s">
       <span class="why-card__number">0${i + 1}</span>
       <h3 class="why-card__title">${w.title}</h3>
     </article>
@@ -791,6 +796,22 @@ function renderWhyMe() {
 
   initReveal();
   initTiltCards();
+}
+
+function renderContacts() {
+  const container = document.getElementById('contactChannels');
+  if (!container) return;
+
+  container.innerHTML = CONTACTS.map(c => `
+    <a href="${c.url}" class="contact-channel" target="_blank" rel="noopener noreferrer">
+      <span class="contact-channel__icon" aria-hidden="true">${c.icon}</span>
+      <span class="contact-channel__body">
+        <span class="contact-channel__label">${c.label}</span>
+        <span class="contact-channel__value">${c.value}</span>
+      </span>
+      <svg class="contact-channel__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+    </a>
+  `).join('');
 }
 
 // ─── Testimonials Slider ───
