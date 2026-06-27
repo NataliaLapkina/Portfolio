@@ -87,6 +87,7 @@ const services = [
 const portfolio = [
   {
     title: 'Автоматизация поиска клиентов',
+    projectType: 'SaaS · Automation',
     desc: 'Система автоматического поиска потенциальных клиентов, email-рассылок и контроля коммуникаций.',
     features: [
       'CRM для клиентской базы',
@@ -100,10 +101,11 @@ const portfolio = [
     status: 'Реализованный проект',
     statusType: 'done',
     visual: 'crm',
-    url: null
+    url: 'https://natalialapkina.github.io/AI-Lead-Hunter/'
   },
   {
     title: 'AI-репетитор по русскому языку',
+    projectType: 'EdTech · MVP',
     desc: 'Интерактивная образовательная платформа с AI-помощником и голосовым сопровождением.',
     tech: ['JavaScript', 'AI', 'Web Speech API'],
     status: 'Рабочий MVP',
@@ -113,6 +115,7 @@ const portfolio = [
   },
   {
     title: 'Платформа для нутрициолога',
+    projectType: 'HealthTech · Platform',
     desc: 'Личный кабинет специалиста и клиента для сопровождения и контроля результатов.',
     tech: ['Web App', 'CRM', 'AI'],
     status: 'В разработке',
@@ -122,6 +125,7 @@ const portfolio = [
   },
   {
     title: 'Сайт логопеда',
+    projectType: 'Digital Platform',
     desc: 'Современный сайт специалиста с SEO-оптимизацией и системой заявок.',
     tech: ['HTML', 'CSS', 'JavaScript', 'SEO'],
     status: 'Реализованный проект',
@@ -131,6 +135,7 @@ const portfolio = [
   },
   {
     title: 'Интернет-магазин сладостей',
+    projectType: 'E-commerce',
     desc: 'Концепция магазина ручной работы с уютным, но современным интерфейсом, каталогом и путём к заказу.',
     tech: ['Lovable', 'UI/UX', 'E-commerce', 'Адаптив'],
     status: 'Реализованный проект',
@@ -140,6 +145,7 @@ const portfolio = [
   },
   {
     title: 'AI-боты и автоматизация',
+    projectType: 'AI · Automation',
     desc: 'Разработка сценариев, архитектуры и логики AI-ассистентов для бизнеса.',
     tech: ['GPT', 'Telegram', 'AI Automation'],
     status: 'Реализованные проекты',
@@ -753,7 +759,7 @@ function renderPortfolio() {
       : '';
 
     const cta = p.url
-      ? `<a href="${p.url}" target="_blank" rel="noopener noreferrer" class="btn btn--ghost case-study__cta">Открыть проект ${arrow}</a>`
+      ? `<a href="${p.url}" target="_blank" rel="noopener noreferrer" class="btn btn--ghost case-study__cta">View project ${arrow}</a>`
       : '';
 
     const techTags = p.tech.map(t => `<li>${t}</li>`).join('');
@@ -764,18 +770,31 @@ function renderPortfolio() {
         <ul class="case-study__features-list">${p.features.map(f => `<li>${f}</li>`).join('')}</ul>
       </div>` : '';
 
+    const projectType = p.projectType
+      ? `<span class="case-study__type">${p.projectType}</span>`
+      : '';
+
+    const caseBadge = p.url
+      ? '<span class="case-study__badge">Case Study</span>'
+      : '';
+
     return `
-      <article class="case-study case-study--card reveal" style="transition-delay: ${i * 0.08}s">
+      <article class="case-study case-study--card case-study--premium case-study--product reveal" style="--stagger: ${i}">
         <div class="case-study__visual-wrap">
+          ${caseBadge}
           ${renderCaseVisual(p)}
           ${statusBadge}
+          <div class="case-study__shine" aria-hidden="true"></div>
         </div>
         <div class="case-study__content">
+          ${projectType}
           <h3 class="case-study__title">${p.title}</h3>
           <p class="case-study__desc">${p.desc}</p>
           ${featuresHtml}
-          <ul class="case-study__tech" aria-label="Стек">${techTags}</ul>
-          ${cta}
+          <div class="case-study__footer">
+            <ul class="case-study__tech" aria-label="Стек">${techTags}</ul>
+            ${cta}
+          </div>
         </div>
       </article>
     `;

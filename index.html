@@ -80,7 +80,9 @@
 
   <main>
     <!-- Hero -->
-    <section class="hero section" id="hero">
+    <section class="hero section hero--agency" id="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__depth" aria-hidden="true"></div>
       <div class="hero__accent" aria-hidden="true"></div>
       <div class="container hero__grid">
         <div class="hero__content">
@@ -188,7 +190,7 @@
     </section>
 
     <!-- Portfolio -->
-    <section class="portfolio section section--band" id="portfolio">
+    <section class="portfolio section section--band portfolio--agency" id="portfolio">
       <div class="container">
         <div class="section-header section-header--editorial reveal">
           <span class="section-num" aria-hidden="true">03</span>
@@ -275,7 +277,71 @@
         </div>
       </div>
     </section>
-
+    <!-- Featured cases -->
+    <section class="case-section section section--band case-section--agency" id="featured-cases" aria-labelledby="featured-cases-title">
+      <div class="case-section__ambient" aria-hidden="true"></div>
+      <div class="cases-container">
+        <div class="case-header case-header--editorial reveal">
+          <span class="section-label">Избранные продукты</span>
+          <h2 class="section-title" id="featured-cases-title">Кейсы</h2>
+          <p class="section-desc">Проекты, в которых я создаю цифровые продукты, а не просто сайты</p>
+        </div>
+        <div class="case-section__panel reveal">
+        <div class="case-grid case-grid--stagger">
+          <a href="https://natalialapkina.github.io/site-logoped-final/" class="case-card case-card--premium case-card--product reveal" style="--stagger: 0" target="_blank" rel="noopener noreferrer">
+            <div class="case-card__visual">
+              <span class="case-card__badge">Case Study</span>
+              <div class="case-image case-image--logoped" aria-hidden="true"></div>
+              <div class="case-card__shine" aria-hidden="true"></div>
+            </div>
+            <div class="case-content">
+              <span class="case-card__type">Digital Platform</span>
+              <h3 class="case-card__title">Сайт логопеда</h3>
+              <p class="case-card__desc">Цифровая платформа для частной практики</p>
+              <div class="case-card__footer">
+                <div class="case-card__tags">
+                  <span>UX/UI</span>
+                  <span>Landing</span>
+                  <span>SEO</span>
+                </div>
+                <span class="case-card__cta">
+                  <span class="case-card__cta-text">View project</span>
+                  <span class="case-card__arrow" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </a>
+          <a href="https://natalialapkina.github.io/AI-Lead-Hunter/" class="case-card case-card--premium case-card--product reveal" style="--stagger: 1" target="_blank" rel="noopener noreferrer">
+            <div class="case-card__visual">
+              <span class="case-card__badge">Case Study</span>
+              <div class="case-image case-image--ai" aria-hidden="true"></div>
+              <div class="case-card__shine" aria-hidden="true"></div>
+            </div>
+            <div class="case-content">
+              <span class="case-card__type">SaaS · Automation</span>
+              <h3 class="case-card__title">AI Lead Hunter</h3>
+              <p class="case-card__desc">Система автоматизации поиска и работы с лидами</p>
+              <div class="case-card__footer">
+                <div class="case-card__tags">
+                  <span>AI</span>
+                  <span>Automation</span>
+                  <span>CRM</span>
+                </div>
+                <span class="case-card__cta">
+                  <span class="case-card__cta-text">View project</span>
+                  <span class="case-card__arrow" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        </div>
+      </div>
+    </section>
     <!-- Contact -->
     <section class="contact section" id="contact">
       <div class="container">
@@ -310,7 +376,7 @@
                 <input type="text" id="name" name="name" required placeholder="Как к вам обращаться?" autocomplete="name">
               </div>
               <div class="form-group">
-                <label for="contact">Телефон или Telegram</label>
+                <label for="contactField">Телефон или Telegram</label>
                 <input type="text" id="contactField" name="contact" required placeholder="@username или +7..." autocomplete="tel">
               </div>
               <div class="form-group">
