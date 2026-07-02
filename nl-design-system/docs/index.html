@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NL Design System — Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/typography.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+  <div class="layout-page">
+    <main class="layout-page-main">
+
+      <!-- Hero -->
+      <div class="layout-section layout-section--spacious">
+        <div class="layout-container layout-container--lg layout-stack layout-stack--gap-8">
+          <div class="layout-stack layout-stack--gap-6">
+            <div class="layout-stack layout-stack--gap-4">
+              <p class="type-eyebrow">Documentation</p>
+              <h1 class="type-display type-balance">NL Design System</h1>
+              <p class="type-lead type-pretty">Build modern AI-powered digital products.</p>
+              <p class="type-body type-text-secondary">Designed &amp; Built by Natalia Lapkina</p>
+            </div>
+
+            <div class="layout-cluster layout-cluster--gap-4">
+              <a href="#components" class="nl-btn nl-btn--primary nl-btn--lg">
+                <span class="nl-btn__label">Explore Components</span>
+              </a>
+              <a href="#" class="nl-btn nl-btn--outline nl-btn--lg" aria-disabled="true">
+                <span class="nl-btn__label">GitHub</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Foundations -->
+      <div class="layout-section" id="foundations">
+        <div class="layout-container layout-stack layout-stack--gap-8">
+          <div class="layout-stack layout-stack--gap-3">
+            <p class="type-eyebrow">Foundations</p>
+            <h2 class="type-h2">Design tokens &amp; primitives</h2>
+            <p class="type-body type-text-secondary type-pretty">
+              The building blocks behind every component — consistent, token-driven, and ready for production.
+            </p>
+          </div>
+
+          <div class="layout-auto-grid layout-auto-grid--fill layout-auto-grid--gap-8">
+            <article class="layout-stack layout-stack--gap-3">
+              <div class="layout-cluster layout-cluster--gap-3 layout-u-flex-between">
+                <h3 class="type-h5">Tokens</h3>
+                <span class="type-caption type-success type-semibold">Stable</span>
+              </div>
+              <p class="type-body--sm type-text-secondary">
+                Colors, spacing, radii, shadows, and component-level tokens.
+              </p>
+              <p class="type-prose">
+                <a href="../css/variables.css">variables.css</a>
+              </p>
+            </article>
+
+            <article class="layout-stack layout-stack--gap-3">
+              <div class="layout-cluster layout-cluster--gap-3 layout-u-flex-between">
+                <h3 class="type-h5">Reset</h3>
+                <span class="type-caption type-success type-semibold">Stable</span>
+              </div>
+              <p class="type-body--sm type-text-secondary">
+                Browser normalization and a clean baseline for all projects.
+              </p>
+              <p class="type-prose">
+                <a href="../css/reset.css">reset.css</a>
+              </p>
+            </article>
+
+            <article class="layout-stack layout-stack--gap-3">
+              <div class="layout-cluster layout-cluster--gap-3 layout-u-flex-between">
+                <h3 class="type-h5">Typography</h3>
+                <span class="type-caption type-success type-semibold">Stable</span>
+              </div>
+              <p class="type-body--sm type-text-secondary">
+                Display scale, body text, editorial hierarchy, and utilities.
+              </p>
+              <p class="type-prose">
+                <a href="../css/typography.css">typography.css</a>
+              </p>
+            </article>
+
+            <article class="layout-stack layout-stack--gap-3">
+              <div class="layout-cluster layout-cluster--gap-3 layout-u-flex-between">
+                <h3 class="type-h5">Layout</h3>
+                <span class="type-caption type-success type-semibold">Stable</span>
+              </div>
+              <p class="type-body--sm type-text-secondary">
+                Containers, grids, stacks, clusters, and responsive utilities.
+              </p>
+              <p class="type-prose">
+                <a href="../css/layout.css">layout.css</a>
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <!-- Components -->
+      <div class="layout-section layout-section--spacious" id="components">
+        <div class="layout-container layout-stack layout-stack--gap-8">
+          <div class="layout-stack layout-stack--gap-3">
+            <p class="type-eyebrow">Components</p>
+            <h2 class="type-h2">Composable UI</h2>
+            <p class="type-body type-text-secondary type-pretty">
+              Accessible, token-based components with documentation and live playgrounds.
+            </p>
+          </div>
+
+          <div class="layout-auto-grid layout-auto-grid--fill layout-auto-grid--gap-8">
+
+            <article class="layout-stack layout-stack--gap-4">
+              <div class="layout-stack layout-stack--gap-2">
+                <div class="layout-cluster layout-cluster--gap-3 layout-u-flex-between">
+                  <h3 class="type-h4">IC-001 Button</h3>
+                  <span class="type-caption type-success type-semibold">Stable</span>
+                </div>
+                <p class="type-caption type-text-secondary">Version 1.0</p>
+              </div>
+              <p class="type-body--sm type-text-secondary">
+                Six variants, four sizes, loading states, and icon slots — built for product interfaces.
+              </p>
+              <ul class="layout-stack layout-stack--gap-2 type-body--sm type-prose">
+                <li><a href="../css/components.css">CSS</a></li>
+                <li><a href="components/Button.md">Documentation</a></li>
+                <li><a href="../patterns/buttons/button.html">Playground</a></li>
+              </ul>
+              <div class="layout-cluster layout-cluster--gap-4">
+                <a href="../patterns/buttons/button.html" class="nl-btn nl-btn--primary">
+                  <span class="nl-btn__label">Open Playground</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="layout-stack layout-stack--gap-4">
+              <div class="layout-cluster layout-cluster--gap-3 layout-u-flex-between">
+                <h3 class="type-h4">Card</h3>
+                <span class="type-caption type-warning type-semibold">Planned</span>
+              </div>
+              <p class="type-body--sm type-text-secondary">
+                Product, case study, and content cards with flexible media slots.
+              </p>
+            </article>
+
+            <article class="layout-stack layout-stack--gap-4">
+              <div class="layout-cluster layout-cluster--gap-3 layout-u-flex-between">
+                <h3 class="type-h4">Hero</h3>
+                <span class="type-caption type-warning type-semibold">Planned</span>
+              </div>
+              <p class="type-body--sm type-text-secondary">
+                Landing and product hero sections with editorial typography.
+              </p>
+            </article>
+
+            <article class="layout-stack layout-stack--gap-4">
+              <div class="layout-cluster layout-cluster--gap-3 layout-u-flex-between">
+                <h3 class="type-h4">Input</h3>
+                <span class="type-caption type-warning type-semibold">Planned</span>
+              </div>
+              <p class="type-body--sm type-text-secondary">
+                Text fields with validation states and full accessibility support.
+              </p>
+            </article>
+
+            <article class="layout-stack layout-stack--gap-4">
+              <div class="layout-cluster layout-cluster--gap-3 layout-u-flex-between">
+                <h3 class="type-h4">Form</h3>
+                <span class="type-caption type-warning type-semibold">Planned</span>
+              </div>
+              <p class="type-body--sm type-text-secondary">
+                Composable form patterns — labels, fields, and submit flows.
+              </p>
+            </article>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Patterns -->
+      <div class="layout-section" id="patterns">
+        <div class="layout-container layout-stack layout-stack--gap-8">
+          <div class="layout-stack layout-stack--gap-3">
+            <p class="type-eyebrow">Patterns</p>
+            <h2 class="type-h2">Layout primitives</h2>
+            <p class="type-body type-text-secondary type-pretty">
+              Opinionated layout recipes for stacking, grouping, and responsive composition.
+            </p>
+          </div>
+
+          <div class="layout-grid layout-grid--2 layout-grid--gap-8 layout-grid--responsive-2">
+            <article class="layout-stack layout-stack--gap-3">
+              <h3 class="type-h5">Stack</h3>
+              <p class="type-body--sm type-text-secondary">
+                Vertical rhythm with consistent gap tokens. Use <code class="type-code">.layout-stack</code> for sections, forms, and card content.
+              </p>
+              <p class="type-prose">
+                <a href="../css/layout.css">layout.css</a>
+              </p>
+            </article>
+
+            <article class="layout-stack layout-stack--gap-3">
+              <h3 class="type-h5">Cluster</h3>
+              <p class="type-body--sm type-text-secondary">
+                Inline groups that wrap naturally. Ideal for button rows, tags, and metadata.
+              </p>
+              <p class="type-prose">
+                <a href="../css/layout.css">layout.css</a>
+              </p>
+            </article>
+
+            <article class="layout-stack layout-stack--gap-3">
+              <h3 class="type-h5">Sidebar</h3>
+              <p class="type-body--sm type-text-secondary">
+                Two-column layouts with a narrow aside and flexible main content area.
+              </p>
+              <p class="type-prose">
+                <a href="../css/layout.css">layout.css</a>
+              </p>
+            </article>
+
+            <article class="layout-stack layout-stack--gap-3">
+              <h3 class="type-h5">Auto Grid</h3>
+              <p class="type-body--sm type-text-secondary">
+                Responsive auto-fill grids for card galleries, feature lists, and docs indexes.
+              </p>
+              <p class="type-prose">
+                <a href="../css/layout.css">layout.css</a>
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <!-- Philosophy -->
+      <div class="layout-section layout-section--spacious" id="philosophy">
+        <div class="layout-container">
+          <div class="layout-sidebar layout-sidebar--gap-10">
+            <div class="layout-stack layout-stack--gap-3">
+              <p class="type-eyebrow">Philosophy</p>
+              <h2 class="type-h3">Why NL Design System exists</h2>
+            </div>
+            <div class="layout-stack layout-stack--gap-4 type-prose">
+              <p class="type-body type-pretty">
+                NL Design System gives AI and digital product teams a shared visual language —
+                one that feels like a product studio, not a personal portfolio.
+              </p>
+              <p class="type-body type-text-secondary type-pretty">
+                It combines calm premium aesthetics with product thinking: editorial clarity,
+                token-driven consistency, purposeful motion, and accessibility by default.
+                Every block is designed to ship in landings, SaaS dashboards, and AI-powered tools.
+              </p>
+              <p class="type-prose">
+                <a href="Design-Principles.md">Read design principles</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="layout-section layout-section--compact">
+        <div class="layout-container layout-stack layout-stack--gap-3 type-align-center">
+          <p class="type-h5">NL Design System</p>
+          <p class="type-caption type-text-secondary">Built by Natalia Lapkina</p>
+          <p class="type-caption type-text-secondary">Version 0.7.5</p>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

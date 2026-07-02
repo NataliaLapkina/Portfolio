@@ -1,0 +1,450 @@
+/**
+ * ==========================================================================
+ * NL Design System — Components
+ * Version: 0.9.0
+ * IC-001 — Button (complete)
+ *
+ * Requires: variables.css, reset.css, typography.css, layout.css
+ * Spec: docs/components/Button.md
+ * ==========================================================================
+ */
+
+/* --------------------------------------------------------------------------
+   IC-001 — Button Base (.nl-btn)
+   Structural shell only — variants added in later phases.
+   -------------------------------------------------------------------------- */
+
+.nl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nl-btn-gap);
+  min-block-size: var(--nl-btn-height-md);
+  padding-inline: var(--nl-btn-padding-inline-md);
+  border: var(--border-width) solid transparent;
+  border-radius: var(--nl-btn-radius);
+  font-weight: var(--nl-btn-font-weight);
+  transition: var(--nl-btn-transition);
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+}
+
+.nl-btn:focus-visible {
+  outline: var(--nl-btn-focus-ring-width) solid var(--nl-btn-focus-ring);
+  outline-offset: var(--nl-space-1);
+}
+
+.nl-btn:disabled,
+.nl-btn[aria-disabled="true"] {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.nl-btn[aria-busy="true"] {
+  cursor: progress;
+}
+
+/* --------------------------------------------------------------------------
+   IC-001 — Button Variants
+   Visual modifiers — compose with .nl-btn base class.
+   -------------------------------------------------------------------------- */
+
+.nl-btn--primary {
+  background-color: var(--nl-color-primary);
+  color: var(--nl-color-surface);
+}
+
+.nl-btn--secondary {
+  background-color: var(--nl-color-surface);
+  color: var(--nl-color-text);
+  border-color: var(--nl-color-border);
+}
+
+.nl-btn--ghost {
+  background-color: transparent;
+  color: var(--nl-color-text);
+}
+
+.nl-btn--outline {
+  background-color: transparent;
+  color: var(--nl-color-primary);
+  border-color: var(--nl-color-primary);
+}
+
+.nl-btn--danger {
+  background-color: var(--nl-color-danger);
+  color: var(--nl-color-surface);
+}
+
+.nl-btn--link {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--nl-color-link);
+}
+
+@media (hover: hover) {
+  .nl-btn--primary:hover {
+    background-color: var(--nl-color-primary-hover);
+  }
+
+  .nl-btn--secondary:hover {
+    background-color: var(--nl-color-surface-alt);
+  }
+
+  .nl-btn--ghost:hover {
+    background-color: var(--nl-color-surface-alt);
+  }
+
+  .nl-btn--outline:hover {
+    background-color: var(--nl-color-surface-alt);
+  }
+
+  .nl-btn--danger:hover {
+    background-color: var(--nl-color-danger);
+  }
+
+  .nl-btn--link:hover {
+    text-decoration: underline;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   IC-001 — Button Sizes
+   Size and width modifiers — compose with .nl-btn and variant classes.
+   -------------------------------------------------------------------------- */
+
+.nl-btn--sm {
+  min-block-size: var(--nl-btn-height-sm);
+  padding-inline: var(--nl-btn-padding-inline-sm);
+}
+
+.nl-btn--md {
+  min-block-size: var(--nl-btn-height-md);
+  padding-inline: var(--nl-btn-padding-inline-md);
+}
+
+.nl-btn--lg {
+  min-block-size: var(--nl-btn-height-lg);
+  padding-inline: var(--nl-btn-padding-inline-lg);
+}
+
+.nl-btn--xl {
+  min-block-size: var(--nl-btn-height-xl);
+  padding-inline: var(--nl-btn-padding-inline-lg);
+}
+
+.nl-btn--block {
+  inline-size: 100%;
+}
+
+.nl-btn--fit {
+  inline-size: fit-content;
+}
+
+/* --------------------------------------------------------------------------
+   IC-001 — Button Elements
+   Internal parts — label, icon, loader.
+   -------------------------------------------------------------------------- */
+
+.nl-btn__label {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nl-btn__icon {
+  inline-size: var(--nl-btn-icon-size);
+  block-size: var(--nl-btn-icon-size);
+  flex: 0 0 auto;
+}
+
+.nl-btn__icon svg {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.nl-btn__icon--trailing {
+  order: 2;
+}
+
+.nl-btn__loader {
+  inline-size: var(--nl-btn-icon-size);
+  block-size: var(--nl-btn-icon-size);
+  border-radius: var(--nl-radius-pill);
+  border: var(--border-width) solid currentColor;
+  border-block-start-color: transparent;
+  display: none;
+  flex: 0 0 auto;
+  animation: nl-btn-spin var(--nl-duration-slow) linear infinite;
+}
+
+@keyframes nl-btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.nl-btn[aria-busy="true"] .nl-btn__loader,
+.nl-btn--loading .nl-btn__loader {
+  display: inline-block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nl-btn__loader {
+    animation: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   IC-002 — Card Base (.nl-card)
+   Structural shell only — variants added in later phases.
+   Spec: docs/components/Card.md
+   -------------------------------------------------------------------------- */
+
+.nl-card {
+  display: grid;
+  gap: var(--nl-card-gap-md);
+  padding: var(--nl-card-padding-md);
+  border: var(--nl-card-border-width) solid var(--nl-color-border);
+  border-radius: var(--nl-card-radius);
+  background: var(--nl-color-surface);
+  box-shadow: var(--nl-card-shadow);
+  transition: var(--nl-card-transition);
+  overflow: hidden;
+}
+
+.nl-card__media {
+  margin: calc(var(--nl-card-padding-md) * -1);
+  margin-block-end: 0;
+}
+
+.nl-card__media img {
+  inline-size: 100%;
+  block-size: auto;
+  object-fit: cover;
+}
+
+.nl-card__header,
+.nl-card__body,
+.nl-card__footer,
+.nl-card__actions {
+  display: grid;
+  gap: var(--nl-card-gap-sm);
+}
+
+.nl-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--nl-card-gap-sm);
+}
+
+.nl-card__title {
+  margin: 0;
+}
+
+.nl-card__description,
+.nl-card__meta {
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   IC-002 — Card Variants
+   Visual modifiers — compose with .nl-card base class.
+   -------------------------------------------------------------------------- */
+
+.nl-card--elevated {
+  box-shadow: var(--nl-card-shadow-hover);
+}
+
+.nl-card--outlined {
+  box-shadow: none;
+  border-color: var(--nl-color-border);
+}
+
+.nl-card--filled {
+  background: var(--nl-color-surface-alt);
+}
+
+.nl-card--ghost {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.nl-card--interactive {
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .nl-card--interactive:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--nl-card-shadow-hover);
+  }
+}
+
+.nl-card--interactive:focus-visible {
+  outline: var(--nl-btn-focus-ring-width) solid var(--nl-btn-focus-ring);
+  outline-offset: var(--nl-space-1);
+}
+
+/* --------------------------------------------------------------------------
+   IC-002 — Card Sizes
+   Size modifiers — compose with .nl-card and variant classes.
+   -------------------------------------------------------------------------- */
+
+.nl-card--sm {
+  padding: var(--nl-card-padding-sm);
+  gap: var(--nl-card-gap-sm);
+}
+
+.nl-card--md {
+  padding: var(--nl-card-padding-md);
+  gap: var(--nl-card-gap-md);
+}
+
+.nl-card--lg {
+  padding: var(--nl-card-padding-lg);
+  gap: var(--nl-card-gap-lg);
+}
+
+/* --------------------------------------------------------------------------
+   IC-002 — Card Modifiers
+   Layout and state modifiers — compose with .nl-card base class.
+   -------------------------------------------------------------------------- */
+
+.nl-card--compact {
+  padding: var(--nl-card-padding-sm);
+  gap: var(--nl-card-gap-sm);
+}
+
+.nl-card--horizontal {
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .nl-card--horizontal {
+    grid-template-columns: minmax(220px, 0.45fr) minmax(0, 1fr);
+  }
+}
+
+.nl-card--flush-media .nl-card__media {
+  margin: calc(var(--nl-card-padding-md) * -1);
+  margin-block-end: 0;
+}
+
+.nl-card--selected {
+  border-color: var(--nl-color-primary);
+}
+
+.nl-card--disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.nl-card--loading {
+  cursor: progress;
+}
+
+/* --------------------------------------------------------------------------
+   IC-003 — Badge Base (.nl-badge)
+   Spec: docs/components/Badge.md
+   -------------------------------------------------------------------------- */
+
+.nl-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nl-badge-gap);
+  min-block-size: var(--nl-badge-height-md);
+  padding-inline: var(--nl-badge-padding-inline-md);
+  border: var(--nl-badge-border-width) solid transparent;
+  border-radius: var(--nl-badge-radius);
+  font-size: var(--nl-badge-font-size-md);
+  font-weight: var(--nl-badge-font-weight);
+  line-height: 1;
+  white-space: nowrap;
+  transition: var(--nl-badge-transition);
+}
+
+.nl-badge__dot {
+  inline-size: var(--nl-badge-dot-size);
+  block-size: var(--nl-badge-dot-size);
+  border-radius: var(--nl-radius-pill);
+  background: currentColor;
+  flex: 0 0 auto;
+}
+
+.nl-badge__icon {
+  inline-size: 1em;
+  block-size: 1em;
+  flex: 0 0 auto;
+}
+
+.nl-badge__label {
+  display: inline-block;
+}
+
+/* --------------------------------------------------------------------------
+   IC-003 — Badge Variants
+   -------------------------------------------------------------------------- */
+
+.nl-badge--neutral {
+  background: var(--nl-badge-neutral-bg);
+  color: var(--nl-badge-neutral-fg);
+}
+
+.nl-badge--primary {
+  background: var(--nl-badge-primary-bg);
+  color: var(--nl-badge-primary-fg);
+}
+
+.nl-badge--success {
+  background: var(--nl-badge-success-bg);
+  color: var(--nl-badge-success-fg);
+}
+
+.nl-badge--warning {
+  background: var(--nl-badge-warning-bg);
+  color: var(--nl-badge-warning-fg);
+}
+
+.nl-badge--danger {
+  background: var(--nl-badge-danger-bg);
+  color: var(--nl-badge-danger-fg);
+}
+
+.nl-badge--outline {
+  background: transparent;
+  color: var(--nl-color-text);
+  border-color: var(--nl-badge-outline-border);
+}
+
+.nl-badge--ghost {
+  background: transparent;
+  color: var(--nl-color-text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   IC-003 — Badge Sizes
+   -------------------------------------------------------------------------- */
+
+.nl-badge--sm {
+  min-block-size: var(--nl-badge-height-sm);
+  padding-inline: var(--nl-badge-padding-inline-sm);
+  font-size: var(--nl-badge-font-size-sm);
+}
+
+.nl-badge--md {
+  min-block-size: var(--nl-badge-height-md);
+  padding-inline: var(--nl-badge-padding-inline-md);
+  font-size: var(--nl-badge-font-size-md);
+}
+
+.nl-badge--lg {
+  min-block-size: var(--nl-badge-height-lg);
+  padding-inline: var(--nl-badge-padding-inline-lg);
+  font-size: var(--nl-badge-font-size-md);
+}

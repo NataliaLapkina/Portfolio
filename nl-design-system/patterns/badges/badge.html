@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IC-003 Badge Playground — NL Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/variables.css">
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/typography.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/components.css">
+</head>
+<body>
+  <div class="layout-page">
+    <main class="layout-page-main">
+      <div class="layout-section">
+        <div class="layout-container layout-stack layout-stack--gap-8">
+
+          <header class="layout-stack layout-stack--gap-3">
+            <p class="type-eyebrow">NL Design System</p>
+            <h1 class="type-h2">IC-003 — Badge Playground</h1>
+            <p class="type-lead">Визуальная проверка компонента <code class="type-code">.nl-badge</code></p>
+          </header>
+
+          <!-- 1. Base Badge -->
+          <section class="layout-stack layout-stack--gap-4">
+            <h2 class="type-h4">1. Base Badge</h2>
+            <div class="layout-cluster layout-cluster--gap-4">
+              <span class="nl-badge nl-badge--neutral">
+                <span class="nl-badge__label">Default label</span>
+              </span>
+            </div>
+          </section>
+
+          <!-- 2. Variants -->
+          <section class="layout-stack layout-stack--gap-4">
+            <h2 class="type-h4">2. Варианты</h2>
+            <div class="layout-cluster layout-cluster--gap-4">
+              <span class="nl-badge nl-badge--neutral">
+                <span class="nl-badge__label">Neutral</span>
+              </span>
+              <span class="nl-badge nl-badge--primary">
+                <span class="nl-badge__label">Primary</span>
+              </span>
+              <span class="nl-badge nl-badge--success">
+                <span class="nl-badge__label">Success</span>
+              </span>
+              <span class="nl-badge nl-badge--warning">
+                <span class="nl-badge__label">Warning</span>
+              </span>
+              <span class="nl-badge nl-badge--danger">
+                <span class="nl-badge__label">Danger</span>
+              </span>
+              <span class="nl-badge nl-badge--outline">
+                <span class="nl-badge__label">Outline</span>
+              </span>
+              <span class="nl-badge nl-badge--ghost">
+                <span class="nl-badge__label">Ghost</span>
+              </span>
+            </div>
+          </section>
+
+          <!-- 3. Sizes -->
+          <section class="layout-stack layout-stack--gap-4">
+            <h2 class="type-h4">3. Размеры</h2>
+            <div class="layout-cluster layout-cluster--gap-4">
+              <span class="nl-badge nl-badge--primary nl-badge--sm">
+                <span class="nl-badge__label">Small</span>
+              </span>
+              <span class="nl-badge nl-badge--primary nl-badge--md">
+                <span class="nl-badge__label">Medium</span>
+              </span>
+              <span class="nl-badge nl-badge--primary nl-badge--lg">
+                <span class="nl-badge__label">Large</span>
+              </span>
+            </div>
+          </section>
+
+          <!-- 4. Badge with dot -->
+          <section class="layout-stack layout-stack--gap-4">
+            <h2 class="type-h4">4. Badge with dot</h2>
+            <div class="layout-cluster layout-cluster--gap-4">
+              <span class="nl-badge nl-badge--success">
+                <span class="nl-badge__dot" aria-hidden="true"></span>
+                <span class="nl-badge__label">Stable</span>
+              </span>
+              <span class="nl-badge nl-badge--warning">
+                <span class="nl-badge__dot" aria-hidden="true"></span>
+                <span class="nl-badge__label">Beta</span>
+              </span>
+              <span class="nl-badge nl-badge--primary">
+                <span class="nl-badge__dot" aria-hidden="true"></span>
+                <span class="nl-badge__label">New</span>
+              </span>
+            </div>
+          </section>
+
+          <!-- 5. Badge with icon -->
+          <section class="layout-stack layout-stack--gap-4">
+            <h2 class="type-h4">5. Badge with icon</h2>
+            <div class="layout-cluster layout-cluster--gap-4">
+              <span class="nl-badge nl-badge--neutral">
+                <span class="nl-badge__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                  </svg>
+                </span>
+                <span class="nl-badge__label">API</span>
+              </span>
+              <span class="nl-badge nl-badge--outline">
+                <span class="nl-badge__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                  </svg>
+                </span>
+                <span class="nl-badge__label">AI</span>
+              </span>
+            </div>
+          </section>
+
+          <!-- 6. Usage examples -->
+          <section class="layout-stack layout-stack--gap-6">
+            <h2 class="type-h4">6. Примеры использования</h2>
+
+            <div class="layout-stack layout-stack--gap-3">
+              <h3 class="type-h5">Technology badges</h3>
+              <div class="layout-cluster layout-cluster--gap-2">
+                <span class="nl-badge nl-badge--neutral nl-badge--sm">
+                  <span class="nl-badge__label">AI</span>
+                </span>
+                <span class="nl-badge nl-badge--neutral nl-badge--sm">
+                  <span class="nl-badge__label">CRM</span>
+                </span>
+                <span class="nl-badge nl-badge--neutral nl-badge--sm">
+                  <span class="nl-badge__label">API</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="layout-stack layout-stack--gap-3">
+              <h3 class="type-h5">Status badges</h3>
+              <div class="layout-cluster layout-cluster--gap-2">
+                <span class="nl-badge nl-badge--success">
+                  <span class="nl-badge__label">Stable</span>
+                </span>
+                <span class="nl-badge nl-badge--warning">
+                  <span class="nl-badge__label">Beta</span>
+                </span>
+                <span class="nl-badge nl-badge--primary">
+                  <span class="nl-badge__label">New</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="layout-stack layout-stack--gap-3">
+              <h3 class="type-h5">Case tags</h3>
+              <ul class="layout-cluster layout-cluster--gap-2">
+                <li>
+                  <span class="nl-badge nl-badge--outline nl-badge--sm">
+                    <span class="nl-badge__label">SaaS</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="nl-badge nl-badge--outline nl-badge--sm">
+                    <span class="nl-badge__label">Automation</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="nl-badge nl-badge--outline nl-badge--sm">
+                    <span class="nl-badge__label">MVP</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

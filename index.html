@@ -28,6 +28,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="nl-design-system/css/variables.css">
+  <link rel="stylesheet" href="nl-design-system/css/reset.css">
+  <link rel="stylesheet" href="nl-design-system/css/typography.css">
+  <link rel="stylesheet" href="nl-design-system/css/layout.css">
+  <link rel="stylesheet" href="nl-design-system/css/components.css">
   <link rel="stylesheet" href="style.css">
 
   <!-- schema.org Person -->
@@ -70,7 +75,7 @@
           <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
           <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
-        <a href="#contact" class="btn btn--primary btn--sm nav__cta">Обсудить проект</a>
+        <a href="#contact" class="btn btn--primary btn--sm nav__cta nl-btn nl-btn--primary nl-btn--sm">Обсудить проект</a>
         <button class="nav__burger" id="navBurger" aria-label="Открыть меню" aria-expanded="false">
           <span></span><span></span>
         </button>
@@ -95,8 +100,8 @@
           </h1>
           <p class="hero__text hero-animate" style="--i:2">Помогаю экспертам и компаниям привлекать клиентов, автоматизировать рутинные процессы и запускать цифровые продукты с использованием искусственного интеллекта.</p>
           <div class="hero__actions hero-animate" style="--i:3">
-            <a href="#contact" class="btn btn--primary magnetic">Обсудить проект</a>
-            <a href="#portfolio" class="btn btn--ghost magnetic">Посмотреть кейсы</a>
+            <a href="#contact" class="btn btn--primary magnetic nl-btn nl-btn--primary nl-btn--lg">Обсудить проект</a>
+            <a href="#portfolio" class="btn btn--ghost magnetic nl-btn nl-btn--ghost nl-btn--lg">Посмотреть кейсы</a>
           </div>
         </div>
         <div class="hero__visual hero-animate" style="--i:2">
@@ -288,23 +293,23 @@
         </div>
         <div class="case-section__panel reveal">
         <div class="case-grid case-grid--stagger">
-          <a href="https://natalialapkina.github.io/site-logoped-final/" class="case-card case-card--premium case-card--product reveal" style="--stagger: 0" target="_blank" rel="noopener noreferrer">
-            <div class="case-card__visual">
+          <a href="https://natalialapkina.github.io/site-logoped-final/" class="case-card case-card--premium case-card--product reveal nl-card nl-card--interactive nl-card--lg" style="--stagger: 0" target="_blank" rel="noopener noreferrer">
+            <div class="case-card__visual nl-card__media">
               <span class="case-card__badge">Case Study</span>
               <div class="case-image case-image--logoped" aria-hidden="true"></div>
               <div class="case-card__shine" aria-hidden="true"></div>
             </div>
-            <div class="case-content">
+            <div class="case-content nl-card__body">
               <span class="case-card__type">Digital Platform</span>
-              <h3 class="case-card__title">Сайт логопеда</h3>
-              <p class="case-card__desc">Цифровая платформа для частной практики</p>
-              <div class="case-card__footer">
+              <h3 class="case-card__title nl-card__title">Сайт логопеда</h3>
+              <p class="case-card__desc nl-card__description">Цифровая платформа для частной практики</p>
+              <div class="case-card__footer nl-card__footer">
                 <div class="case-card__tags">
                   <span>UX/UI</span>
                   <span>Landing</span>
                   <span>SEO</span>
                 </div>
-                <span class="case-card__cta">
+                <span class="case-card__cta nl-card__actions">
                   <span class="case-card__cta-text">View project</span>
                   <span class="case-card__arrow" aria-hidden="true">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
@@ -313,23 +318,23 @@
               </div>
             </div>
           </a>
-          <a href="https://natalialapkina.github.io/AI-Lead-Hunter/" class="case-card case-card--premium case-card--product reveal" style="--stagger: 1" target="_blank" rel="noopener noreferrer">
-            <div class="case-card__visual">
+          <a href="https://natalialapkina.github.io/AI-Lead-Hunter/" class="case-card case-card--premium case-card--product reveal nl-card nl-card--interactive nl-card--lg" style="--stagger: 1" target="_blank" rel="noopener noreferrer">
+            <div class="case-card__visual nl-card__media">
               <span class="case-card__badge">Case Study</span>
               <div class="case-image case-image--ai" aria-hidden="true"></div>
               <div class="case-card__shine" aria-hidden="true"></div>
             </div>
-            <div class="case-content">
+            <div class="case-content nl-card__body">
               <span class="case-card__type">SaaS · Automation</span>
-              <h3 class="case-card__title">AI Lead Hunter</h3>
-              <p class="case-card__desc">Система автоматизации поиска и работы с лидами</p>
-              <div class="case-card__footer">
+              <h3 class="case-card__title nl-card__title">AI Lead Hunter</h3>
+              <p class="case-card__desc nl-card__description">Система автоматизации поиска и работы с лидами</p>
+              <div class="case-card__footer nl-card__footer">
                 <div class="case-card__tags">
                   <span>AI</span>
                   <span>Automation</span>
                   <span>CRM</span>
                 </div>
-                <span class="case-card__cta">
+                <span class="case-card__cta nl-card__actions">
                   <span class="case-card__cta-text">View project</span>
                   <span class="case-card__arrow" aria-hidden="true">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
@@ -351,7 +356,7 @@
             <h2 class="contact__banner-title">Обсудим ваш проект и найдём оптимальное решение</h2>
             <p class="contact__banner-text">AI-ассистент, автоматизация, сайт или CRM — расскажите о задаче, и я предложу понятный план действий.</p>
           </div>
-          <a href="#contactForm" class="btn btn--primary btn--xl contact__banner-cta magnetic">Обсудить проект</a>
+          <a href="#contactForm" class="btn btn--primary btn--xl contact__banner-cta magnetic nl-btn nl-btn--primary nl-btn--lg">Обсудить проект</a>
         </div>
         <div class="contact__stage">
           <div class="contact__grid">
@@ -383,7 +388,7 @@
                 <label for="message">Описание проекта</label>
                 <textarea id="message" name="message" rows="4" required placeholder="Расскажите о вашей задаче..."></textarea>
               </div>
-              <button type="submit" class="btn btn--primary btn--full" id="formSubmit">
+              <button type="submit" class="btn btn--primary btn--full nl-btn nl-btn--primary nl-btn--md nl-btn--block" id="formSubmit">
                 <span class="btn__text">Отправить заявку</span>
                 <span class="btn__loader" aria-hidden="true"></span>
               </button>

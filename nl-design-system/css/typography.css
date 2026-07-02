@@ -1,0 +1,356 @@
+/**
+ * ==========================================================================
+ * NL Design System — Typography
+ * Version: 0.4.0
+ * Phase: 3 — Type System
+ *
+ * Requires: variables.css (loaded first), reset.css (loaded before this file)
+ *
+ * Usage: apply utility classes (.type-h1, .type-lead, …) instead of
+ * styling raw h1–h6. Semantic headings receive minimal normalization only.
+ * ==========================================================================
+ */
+
+/* ==========================================================================
+   Document defaults
+   Base typographic rhythm for all NL projects.
+   ========================================================================== */
+
+body {
+  font-family: var(--nl-font-family-base);
+  font-size: var(--nl-font-size-md);
+  font-weight: var(--nl-font-weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--nl-color-text);
+  text-wrap: pretty;
+}
+
+/* ==========================================================================
+   Semantic heading normalization (minimal)
+   Unclassed headings inherit display family and heading color only.
+   Size and weight come from .type-h* classes when needed.
+   ========================================================================== */
+
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--nl-font-family-heading);
+  color: var(--nl-color-heading);
+}
+
+/* ==========================================================================
+   1. Display classes
+   Hero and marketing display type — largest scale, tight leading.
+   ========================================================================== */
+
+.type-display {
+  font-family: var(--nl-font-family-heading);
+  font-size: var(--nl-font-size-4xl);
+  font-weight: var(--nl-font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--nl-color-heading);
+  text-wrap: balance;
+}
+
+.type-display--lg {
+  font-size: var(--nl-font-size-5xl);
+}
+
+.type-display--sm {
+  font-size: var(--nl-font-size-3xl);
+}
+
+/* ==========================================================================
+   2. Heading classes
+   Editorial hierarchy — map to token scale H1 (largest) → H6 (smallest).
+   ========================================================================== */
+
+.type-h1 {
+  font-family: var(--nl-font-family-heading);
+  font-size: var(--nl-font-size-5xl);
+  font-weight: var(--nl-font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--nl-color-heading);
+  text-wrap: balance;
+}
+
+.type-h2 {
+  font-family: var(--nl-font-family-heading);
+  font-size: var(--nl-font-size-4xl);
+  font-weight: var(--nl-font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--nl-color-heading);
+  text-wrap: balance;
+}
+
+.type-h3 {
+  font-family: var(--nl-font-family-heading);
+  font-size: var(--nl-font-size-3xl);
+  font-weight: var(--nl-font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--nl-color-heading);
+  text-wrap: balance;
+}
+
+.type-h4 {
+  font-family: var(--nl-font-family-heading);
+  font-size: var(--nl-font-size-2xl);
+  font-weight: var(--nl-font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--nl-color-heading);
+  text-wrap: balance;
+}
+
+.type-h5 {
+  font-family: var(--nl-font-family-heading);
+  font-size: var(--nl-font-size-xl);
+  font-weight: var(--nl-font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--nl-color-heading);
+}
+
+.type-h6 {
+  font-family: var(--nl-font-family-heading);
+  font-size: var(--nl-font-size-md);
+  font-weight: var(--nl-font-weight-semibold);
+  line-height: var(--line-height-normal);
+  color: var(--nl-color-heading);
+}
+
+/* ==========================================================================
+   3. Body classes
+   Default reading text and size variants.
+   ========================================================================== */
+
+.type-body {
+  font-family: var(--nl-font-family-base);
+  font-size: var(--nl-font-size-md);
+  font-weight: var(--nl-font-weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--nl-color-text);
+  text-wrap: pretty;
+}
+
+.type-body--sm {
+  font-size: var(--nl-font-size-sm);
+  line-height: var(--line-height-normal);
+}
+
+.type-body--lg {
+  font-size: var(--nl-font-size-lg);
+  line-height: var(--line-height-relaxed);
+}
+
+/* ==========================================================================
+   4. Lead
+   Introductory paragraph — larger, relaxed, secondary tone.
+   ========================================================================== */
+
+.type-lead {
+  font-family: var(--nl-font-family-base);
+  font-size: var(--nl-font-size-lg);
+  font-weight: var(--nl-font-weight-regular);
+  line-height: var(--line-height-relaxed);
+  color: var(--nl-color-text-secondary);
+  text-wrap: pretty;
+  max-inline-size: var(--nl-container-md);
+}
+
+/* ==========================================================================
+   5. Caption
+   Meta labels, footnotes, image captions.
+   ========================================================================== */
+
+.type-caption {
+  font-family: var(--nl-font-family-base);
+  font-size: var(--nl-font-size-sm);
+  font-weight: var(--nl-font-weight-medium);
+  line-height: var(--line-height-normal);
+  color: var(--nl-color-text-secondary);
+}
+
+.type-caption--xs {
+  font-size: var(--nl-font-size-xs);
+}
+
+/* ==========================================================================
+   6. Eyebrow
+   Section labels above headings — uppercase, brand accent.
+   ========================================================================== */
+
+.type-eyebrow {
+  font-family: var(--nl-font-family-base);
+  font-size: var(--nl-font-size-xs);
+  font-weight: var(--nl-font-weight-semibold);
+  line-height: var(--line-height-normal);
+  color: var(--nl-color-primary);
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   7. Text utilities
+   Weight, color, alignment, wrapping, numeric variants.
+   ========================================================================== */
+
+/* Weight */
+.type-regular { font-weight: var(--nl-font-weight-regular); }
+.type-medium { font-weight: var(--nl-font-weight-medium); }
+.type-semibold { font-weight: var(--nl-font-weight-semibold); }
+.type-bold { font-weight: var(--nl-font-weight-bold); }
+
+/* Semantic color */
+.type-text { color: var(--nl-color-text); }
+.type-text-secondary { color: var(--nl-color-text-secondary); }
+.type-heading { color: var(--nl-color-heading); }
+.type-primary { color: var(--nl-color-primary); }
+.type-link { color: var(--nl-color-link); }
+.type-success { color: var(--nl-color-success); }
+.type-warning { color: var(--nl-color-warning); }
+.type-danger { color: var(--nl-color-danger); }
+
+/* Alignment */
+.type-align-start { text-align: start; }
+.type-align-center { text-align: center; }
+.type-align-end { text-align: end; }
+
+/* Modern text wrapping */
+.type-balance { text-wrap: balance; }
+.type-pretty { text-wrap: pretty; }
+.type-nowrap { white-space: nowrap; }
+
+/* Numeric formatting */
+.type-numeric {
+  font-variant-numeric: tabular-nums;
+}
+
+.type-numeric-proportional {
+  font-variant-numeric: proportional-nums;
+}
+
+/* Truncation — single line ellipsis */
+.type-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Prose — inline links inside long-form text */
+.type-prose a {
+  color: var(--nl-color-link);
+  text-decoration: underline;
+  text-underline-offset: var(--nl-space-1);
+  transition: color var(--nl-duration-fast) var(--nl-ease-standard);
+}
+
+.type-prose a:hover {
+  color: var(--nl-color-primary-hover);
+}
+
+.type-prose a:focus-visible {
+  outline: var(--border-width) solid var(--nl-color-primary);
+  outline-offset: var(--nl-space-1);
+}
+
+/* ==========================================================================
+   8. Selection
+   Text highlight when user selects content.
+   ========================================================================== */
+
+::selection {
+  background-color: var(--nl-color-primary);
+  color: var(--nl-color-surface);
+}
+
+/* ==========================================================================
+   9. Blockquote
+   Pull quotes and citations — editorial inset border.
+   ========================================================================== */
+
+.type-blockquote {
+  margin-inline: 0;
+  padding-inline-start: var(--nl-space-4);
+  border-inline-start: var(--border-width) solid var(--nl-color-divider);
+  font-family: var(--nl-font-family-base);
+  font-size: var(--nl-font-size-lg);
+  font-weight: var(--nl-font-weight-regular);
+  line-height: var(--line-height-relaxed);
+  color: var(--nl-color-text-secondary);
+  text-wrap: pretty;
+}
+
+.type-blockquote__cite {
+  display: block;
+  margin-block-start: var(--nl-space-3);
+  font-size: var(--nl-font-size-sm);
+  font-weight: var(--nl-font-weight-medium);
+  color: var(--nl-color-text-secondary);
+}
+
+/* ==========================================================================
+   10. Code
+   Inline and block code — monospace generic family (no mono token in v0.2).
+   ========================================================================== */
+
+.type-code {
+  font-family: monospace;
+  font-size: var(--nl-font-size-sm);
+  font-weight: var(--nl-font-weight-regular);
+  line-height: var(--line-height-normal);
+  color: var(--nl-color-text);
+  background-color: var(--nl-color-surface-alt);
+  padding-inline: var(--nl-space-2);
+  padding-block: var(--nl-space-1);
+  border-radius: var(--nl-radius-xs);
+}
+
+.type-pre {
+  font-family: monospace;
+  font-size: var(--nl-font-size-sm);
+  font-weight: var(--nl-font-weight-regular);
+  line-height: var(--line-height-relaxed);
+  color: var(--nl-color-text);
+  background-color: var(--nl-color-surface-alt);
+  padding: var(--nl-space-4);
+  border-radius: var(--nl-radius-sm);
+  border: var(--border-width) solid var(--nl-color-border);
+  overflow-x: auto;
+  text-wrap: pretty;
+}
+
+.type-pre .type-code {
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+/* ==========================================================================
+   11. Responsive typography
+   Scale display and top headings up from tablet → desktop.
+   Breakpoints reference tokens from variables.css.
+   ========================================================================== */
+
+@media (min-width: var(--nl-breakpoint-md)) {
+  .type-display {
+    font-size: var(--nl-font-size-5xl);
+  }
+
+  .type-display--sm {
+    font-size: var(--nl-font-size-4xl);
+  }
+
+  .type-h1 {
+    font-size: var(--nl-font-size-5xl);
+  }
+
+  .type-h2 {
+    font-size: var(--nl-font-size-4xl);
+  }
+}
+
+@media (min-width: var(--nl-breakpoint-lg)) {
+  .type-lead {
+    font-size: var(--nl-font-size-xl);
+  }
+
+  .type-display--lg {
+    font-size: var(--nl-font-size-5xl);
+  }
+}

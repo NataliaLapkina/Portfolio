@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NL Design System — Component Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/typography.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+  <div class="layout-page">
+    <main class="layout-page-main">
+
+      <!-- Hero -->
+      <div class="layout-section layout-section--spacious">
+        <div class="layout-container layout-stack layout-stack--gap-6">
+          <div class="layout-stack layout-stack--gap-3">
+            <p class="type-eyebrow">Natalia Lapkina</p>
+            <p class="type-lead type-primary">AI &amp; Digital Products</p>
+            <h1 class="type-display type-balance">NL Design System</h1>
+            <p class="type-caption type-text-secondary">Version 0.7.5</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Foundations -->
+      <div class="layout-section">
+        <div class="layout-container layout-stack layout-stack--gap-8">
+          <div class="layout-stack layout-stack--gap-3">
+            <p class="type-eyebrow">Foundations</p>
+            <h2 class="type-h3">Базовые слои</h2>
+            <p class="type-body type-text-secondary">Токены, сброс, типографика и сетка — фундамент всех компонентов.</p>
+          </div>
+
+          <div class="layout-auto-grid layout-auto-grid--fill layout-auto-grid--gap-8">
+            <article class="layout-stack layout-stack--gap-3">
+              <div class="layout-cluster layout-cluster--gap-3 layout-u-flex-between">
+                <h3 class="type-h5">Design Tokens</h3>
+                <span class="type-caption type-success type-semibold">Stable</span>
+              </div>
+              <p class="type-body--sm type-text-secondary">Цвета, отступы, радиусы и component tokens.</p>
+              <p class="type-prose">
+                <a href="../css/variables.css">variables.css</a>
+              </p>
+            </article>
+
+            <article class="layout-stack layout-stack--gap-3">
+              <div class="layout-cluster layout-cluster--gap-3 layout-u-flex-between">
+                <h3 class="type-h5">Reset</h3>
+                <span class="type-caption type-success type-semibold">Stable</span>
+              </div>
+              <p class="type-body--sm type-text-secondary">Нормализация и сброс браузерных стилей.</p>
+              <p class="type-prose">
+                <a href="../css/reset.css">reset.css</a>
+              </p>
+            </article>
+
+            <article class="layout-stack layout-stack--gap-3">
+              <div class="layout-cluster layout-cluster--gap-3 layout-u-flex-between">
+                <h3 class="type-h5">Typography</h3>
+                <span class="type-caption type-success type-semibold">Stable</span>
+              </div>
+              <p class="type-body--sm type-text-secondary">Шкала заголовков, body-текст и editorial-иерархия.</p>
+              <p class="type-prose">
+                <a href="../css/typography.css">typography.css</a>
+              </p>
+            </article>
+
+            <article class="layout-stack layout-stack--gap-3">
+              <div class="layout-cluster layout-cluster--gap-3 layout-u-flex-between">
+                <h3 class="type-h5">Layout</h3>
+                <span class="type-caption type-success type-semibold">Stable</span>
+              </div>
+              <p class="type-body--sm type-text-secondary">Контейнеры, сетка, stack, cluster и утилиты.</p>
+              <p class="type-prose">
+                <a href="../css/layout.css">layout.css</a>
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <!-- Components -->
+      <div class="layout-section layout-section--spacious">
+        <div class="layout-container layout-stack layout-stack--gap-8">
+          <div class="layout-stack layout-stack--gap-3">
+            <p class="type-eyebrow">Components</p>
+            <h2 class="type-h3">Каталог компонентов</h2>
+            <p class="type-body type-text-secondary">Готовые UI-паттерны с документацией и playground.</p>
+          </div>
+
+          <div class="layout-auto-grid layout-auto-grid--fill layout-auto-grid--gap-8">
+
+            <!-- IC-001 Button -->
+            <article class="layout-stack layout-stack--gap-4">
+              <div class="layout-stack layout-stack--gap-2">
+                <div class="layout-cluster layout-cluster--gap-3 layout-u-flex-between">
+                  <h3 class="type-h4">IC-001 Button</h3>
+                  <span class="type-caption type-success type-semibold">Stable</span>
+                </div>
+                <p class="type-caption type-text-secondary">Version 1.0</p>
+              </div>
+
+              <p class="type-body--sm type-text-secondary">
+                Кнопки с шестью вариантами, четырьмя размерами, loading и icon slots.
+              </p>
+
+              <ul class="layout-stack layout-stack--gap-2 type-body--sm type-prose">
+                <li><a href="../css/components.css">CSS</a></li>
+                <li><a href="../docs/components/Button.md">Documentation</a></li>
+                <li><a href="../patterns/buttons/button.html">Playground</a></li>
+              </ul>
+
+              <div class="layout-cluster layout-cluster--gap-4">
+                <a href="../patterns/buttons/button.html" class="nl-btn nl-btn--primary">
+                  <span class="nl-btn__label">Open Playground</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- IC-002 Card -->
+            <article class="layout-stack layout-stack--gap-4">
+              <div class="layout-stack layout-stack--gap-2">
+                <div class="layout-cluster layout-cluster--gap-3 layout-u-flex-between">
+                  <h3 class="type-h4">IC-002 Card</h3>
+                  <span class="type-caption type-warning type-semibold">Planned</span>
+                </div>
+              </div>
+              <p class="type-body--sm type-text-secondary">
+                Карточки продуктов, кейсов и контентных блоков.
+              </p>
+            </article>
+
+            <!-- IC-003 Hero -->
+            <article class="layout-stack layout-stack--gap-4">
+              <div class="layout-stack layout-stack--gap-2">
+                <div class="layout-cluster layout-cluster--gap-3 layout-u-flex-between">
+                  <h3 class="type-h4">IC-003 Hero</h3>
+                  <span class="type-caption type-warning type-semibold">Planned</span>
+                </div>
+              </div>
+              <p class="type-body--sm type-text-secondary">
+                Hero-секции для лендингов и продуктовых страниц.
+              </p>
+            </article>
+
+            <!-- IC-004 Input -->
+            <article class="layout-stack layout-stack--gap-4">
+              <div class="layout-stack layout-stack--gap-2">
+                <div class="layout-cluster layout-cluster--gap-3 layout-u-flex-between">
+                  <h3 class="type-h4">IC-004 Input</h3>
+                  <span class="type-caption type-warning type-semibold">Planned</span>
+                </div>
+              </div>
+              <p class="type-body--sm type-text-secondary">
+                Текстовые поля, состояния валидации и a11y.
+              </p>
+            </article>
+
+            <!-- IC-005 Form -->
+            <article class="layout-stack layout-stack--gap-4">
+              <div class="layout-stack layout-stack--gap-2">
+                <div class="layout-cluster layout-cluster--gap-3 layout-u-flex-between">
+                  <h3 class="type-h4">IC-005 Form</h3>
+                  <span class="type-caption type-warning type-semibold">Planned</span>
+                </div>
+              </div>
+              <p class="type-body--sm type-text-secondary">
+                Композиция полей, лейблов и submit-паттернов.
+              </p>
+            </article>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="layout-section layout-section--compact">
+        <div class="layout-container layout-stack layout-stack--gap-3 type-align-center">
+          <p class="type-h5">NL Design System</p>
+          <p class="type-caption type-text-secondary">Built by Natalia Lapkina</p>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IC-002 Card Playground — NL Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/variables.css">
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/typography.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/components.css">
+</head>
+<body>
+  <div class="layout-page">
+    <main class="layout-page-main">
+      <div class="layout-section">
+        <div class="layout-container layout-stack layout-stack--gap-8">
+
+          <header class="layout-stack layout-stack--gap-3">
+            <p class="type-eyebrow">NL Design System</p>
+            <h1 class="type-h2">IC-002 — Card Playground</h1>
+            <p class="type-lead">Визуальная проверка компонента <code class="type-code">.nl-card</code></p>
+          </header>
+
+          <!-- 1. Base Card -->
+          <section class="layout-stack layout-stack--gap-4">
+            <h2 class="type-h4">1. Base Card</h2>
+            <div class="layout-auto-grid layout-auto-grid--fill layout-auto-grid--gap-8">
+              <article class="nl-card">
+                <header class="nl-card__header">
+                  <h3 class="nl-card__title type-h5">Базовая карточка</h3>
+                  <p class="nl-card__description type-body--sm type-text-secondary">
+                    Универсальный контейнер для заголовка, описания и контента.
+                  </p>
+                </header>
+                <div class="nl-card__body">
+                  <p class="nl-card__meta type-caption type-text-secondary">Default · padding md · gap md</p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- 2. Variants -->
+          <section class="layout-stack layout-stack--gap-4">
+            <h2 class="type-h4">2. Варианты</h2>
+            <div class="layout-auto-grid layout-auto-grid--fill layout-auto-grid--gap-8">
+
+              <article class="nl-card nl-card--elevated">
+                <header class="nl-card__header">
+                  <h3 class="nl-card__title type-h5">Elevated</h3>
+                  <p class="nl-card__description type-body--sm type-text-secondary">Усиленная тень.</p>
+                </header>
+              </article>
+
+              <article class="nl-card nl-card--outlined">
+                <header class="nl-card__header">
+                  <h3 class="nl-card__title type-h5">Outlined</h3>
+                  <p class="nl-card__description type-body--sm type-text-secondary">Без тени, с border.</p>
+                </header>
+              </article>
+
+              <article class="nl-card nl-card--filled">
+                <header class="nl-card__header">
+                  <h3 class="nl-card__title type-h5">Filled</h3>
+                  <p class="nl-card__description type-body--sm type-text-secondary">Фон surface-alt.</p>
+                </header>
+              </article>
+
+              <article class="nl-card nl-card--ghost">
+                <header class="nl-card__header">
+                  <h3 class="nl-card__title type-h5">Ghost</h3>
+                  <p class="nl-card__description type-body--sm type-text-secondary">Прозрачная оболочка.</p>
+                </header>
+              </article>
+
+              <a href="#" class="nl-card nl-card--interactive">
+                <header class="nl-card__header">
+                  <h3 class="nl-card__title type-h5">Interactive</h3>
+                  <p class="nl-card__description type-body--sm type-text-secondary">
+                    Кликабельная карточка — hover и focus.
+                  </p>
+                </header>
+              </a>
+
+            </div>
+          </section>
+
+          <!-- 3. Sizes -->
+          <section class="layout-stack layout-stack--gap-4">
+            <h2 class="type-h4">3. Размеры</h2>
+            <div class="layout-auto-grid layout-auto-grid--fill layout-auto-grid--gap-8">
+
+              <article class="nl-card nl-card--sm">
+                <header class="nl-card__header">
+                  <h3 class="nl-card__title type-h5">Small</h3>
+                  <p class="nl-card__description type-body--sm type-text-secondary">nl-card--sm</p>
+                </header>
+              </article>
+
+              <article class="nl-card nl-card--md">
+                <header class="nl-card__header">
+                  <h3 class="nl-card__title type-h5">Medium</h3>
+                  <p class="nl-card__description type-body--sm type-text-secondary">nl-card--md</p>
+                </header>
+              </article>
+
+              <article class="nl-card nl-card--lg">
+                <header class="nl-card__header">
+                  <h3 class="nl-card__title type-h5">Large</h3>
+                  <p class="nl-card__description type-body--sm type-text-secondary">nl-card--lg</p>
+                </header>
+              </article>
+
+            </div>
+          </section>
+
+          <!-- 4. Modifiers -->
+          <section class="layout-stack layout-stack--gap-4">
+            <h2 class="type-h4">4. Модификаторы</h2>
+            <div class="layout-stack layout-stack--gap-8">
+
+              <article class="nl-card nl-card--compact">
+                <header class="nl-card__header">
+                  <h3 class="nl-card__title type-h5">Compact</h3>
+                  <p class="nl-card__description type-body--sm type-text-secondary">Плотные отступы.</p>
+                </header>
+              </article>
+
+              <article class="nl-card nl-card--horizontal">
+                <div class="nl-card__media">
+                  <img src="https://picsum.photos/seed/nl-card-horizontal/440/280" alt="" width="440" height="280">
+                </div>
+                <header class="nl-card__header">
+                  <h3 class="nl-card__title type-h5">Horizontal</h3>
+                  <p class="nl-card__description type-body--sm type-text-secondary">
+                    Медиа слева, контент справа — с 768px.
+                  </p>
+                </header>
+              </article>
+
+              <article class="nl-card nl-card--flush-media">
+                <div class="nl-card__media">
+                  <img src="https://picsum.photos/seed/nl-card-flush/640/240" alt="" width="640" height="240">
+                </div>
+                <header class="nl-card__header">
+                  <h3 class="nl-card__title type-h5">Flush media</h3>
+                  <p class="nl-card__description type-body--sm type-text-secondary">
+                    Изображение примыкает к краям карточки.
+                  </p>
+                </header>
+              </article>
+
+              <div class="layout-auto-grid layout-auto-grid--fill layout-auto-grid--gap-8">
+                <article class="nl-card nl-card--selected">
+                  <header class="nl-card__header">
+                    <h3 class="nl-card__title type-h5">Selected</h3>
+                    <p class="nl-card__description type-body--sm type-text-secondary">Border primary.</p>
+                  </header>
+                </article>
+
+                <article class="nl-card nl-card--disabled">
+                  <header class="nl-card__header">
+                    <h3 class="nl-card__title type-h5">Disabled</h3>
+                    <p class="nl-card__description type-body--sm type-text-secondary">Opacity 0.6.</p>
+                  </header>
+                </article>
+
+                <article class="nl-card nl-card--loading" aria-busy="true">
+                  <header class="nl-card__header">
+                    <h3 class="nl-card__title type-h5">Loading</h3>
+                    <p class="nl-card__description type-body--sm type-text-secondary">cursor: progress</p>
+                  </header>
+                </article>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- 5. Card with actions -->
+          <section class="layout-stack layout-stack--gap-4">
+            <h2 class="type-h4">5. Card with actions</h2>
+            <div class="layout-auto-grid layout-auto-grid--fill layout-auto-grid--gap-8">
+              <article class="nl-card nl-card--elevated">
+                <header class="nl-card__header">
+                  <p class="type-eyebrow">Settings</p>
+                  <h3 class="nl-card__title type-h5">Уведомления</h3>
+                  <p class="nl-card__description type-body--sm type-text-secondary">
+                    Управление email и push-уведомлениями продукта.
+                  </p>
+                </header>
+                <div class="nl-card__body">
+                  <p class="nl-card__meta type-caption type-text-secondary">Обновлено сегодня</p>
+                </div>
+                <footer class="nl-card__footer">
+                  <div class="nl-card__actions">
+                    <button type="button" class="nl-btn nl-btn--primary">
+                      <span class="nl-btn__label">Сохранить</span>
+                    </button>
+                    <button type="button" class="nl-btn nl-btn--ghost">
+                      <span class="nl-btn__label">Отмена</span>
+                    </button>
+                  </div>
+                </footer>
+              </article>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

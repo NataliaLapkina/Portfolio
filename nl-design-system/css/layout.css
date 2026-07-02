@@ -1,0 +1,465 @@
+/**
+ * ==========================================================================
+ * NL Design System — Layout
+ * Version: 0.5.0
+ * Phase: 4 — Layout System
+ *
+ * Requires: variables.css (loaded first)
+ * Load order: variables → reset → typography → layout
+ *
+ * Structural patterns (.layout-*) and utilities (.layout-u-*).
+ * No colors, no typography — spacing and structure only via tokens.
+ * ==========================================================================
+ */
+
+/* ==========================================================================
+   1. Containers
+   Centered content shells with token-based max-width and inline padding.
+   ========================================================================== */
+
+.layout-container {
+  inline-size: 100%;
+  max-inline-size: var(--nl-container-xl);
+  margin-inline: auto;
+  padding-inline: var(--nl-space-4);
+}
+
+.layout-container--sm {
+  max-inline-size: var(--nl-container-sm);
+}
+
+.layout-container--md {
+  max-inline-size: var(--nl-container-md);
+}
+
+.layout-container--lg {
+  max-inline-size: var(--nl-container-lg);
+}
+
+.layout-container--xl {
+  max-inline-size: var(--nl-container-xl);
+}
+
+.layout-container--fluid {
+  max-inline-size: none;
+}
+
+/* ==========================================================================
+   2. Page wrapper
+   Full-viewport page shell — supports sticky footer via .layout-page-main.
+   ========================================================================== */
+
+.layout-page {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100%;
+  min-block-size: 100dvh;
+}
+
+.layout-page-main {
+  flex: 1 0 auto;
+}
+
+/* ==========================================================================
+   3. Section spacing
+   Vertical rhythm between page sections — block padding only.
+   ========================================================================== */
+
+.layout-section {
+  padding-block: var(--nl-space-16);
+}
+
+.layout-section--compact {
+  padding-block: var(--nl-space-12);
+}
+
+.layout-section--spacious {
+  padding-block: var(--nl-space-20);
+}
+
+.layout-section--none {
+  padding-block: 0;
+}
+
+/* ==========================================================================
+   4. Grid system
+   Explicit column grids with token gaps.
+   ========================================================================== */
+
+.layout-grid {
+  display: grid;
+  gap: var(--nl-space-4);
+}
+
+.layout-grid--gap-2 { gap: var(--nl-space-2); }
+.layout-grid--gap-3 { gap: var(--nl-space-3); }
+.layout-grid--gap-4 { gap: var(--nl-space-4); }
+.layout-grid--gap-6 { gap: var(--nl-space-6); }
+.layout-grid--gap-8 { gap: var(--nl-space-8); }
+
+.layout-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.layout-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.layout-grid--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.layout-grid--12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+/* ==========================================================================
+   5. Flex helpers
+   Low-level flex utilities for alignment and distribution.
+   ========================================================================== */
+
+.layout-u-flex {
+  display: flex;
+}
+
+.layout-u-inline-flex {
+  display: inline-flex;
+}
+
+.layout-u-flex-row {
+  flex-direction: row;
+}
+
+.layout-u-flex-col {
+  flex-direction: column;
+}
+
+.layout-u-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.layout-u-flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.layout-u-flex-1 {
+  flex: 1 1 0;
+  min-inline-size: 0;
+}
+
+.layout-u-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layout-u-flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.layout-u-flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.layout-u-flex-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.layout-u-items-start {
+  align-items: flex-start;
+}
+
+.layout-u-items-center {
+  align-items: center;
+}
+
+.layout-u-items-end {
+  align-items: flex-end;
+}
+
+.layout-u-items-stretch {
+  align-items: stretch;
+}
+
+.layout-u-justify-start {
+  justify-content: flex-start;
+}
+
+.layout-u-justify-center {
+  justify-content: center;
+}
+
+.layout-u-justify-end {
+  justify-content: flex-end;
+}
+
+.layout-u-justify-between {
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+   6. Stack pattern
+   Vertical flow with consistent gap (Every Layout — Stack).
+   ========================================================================== */
+
+.layout-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nl-space-4);
+}
+
+.layout-stack--gap-2 { gap: var(--nl-space-2); }
+.layout-stack--gap-3 { gap: var(--nl-space-3); }
+.layout-stack--gap-4 { gap: var(--nl-space-4); }
+.layout-stack--gap-6 { gap: var(--nl-space-6); }
+.layout-stack--gap-8 { gap: var(--nl-space-8); }
+.layout-stack--gap-10 { gap: var(--nl-space-10); }
+.layout-stack--gap-12 { gap: var(--nl-space-12); }
+
+/* ==========================================================================
+   7. Cluster pattern
+   Horizontal groups that wrap — tags, button groups, meta rows.
+   ========================================================================== */
+
+.layout-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--nl-space-4);
+}
+
+.layout-cluster--gap-2 { gap: var(--nl-space-2); }
+.layout-cluster--gap-3 { gap: var(--nl-space-3); }
+.layout-cluster--gap-6 { gap: var(--nl-space-6); }
+.layout-cluster--gap-8 { gap: var(--nl-space-8); }
+
+.layout-cluster--start {
+  align-items: flex-start;
+}
+
+.layout-cluster--stretch {
+  align-items: stretch;
+}
+
+/* ==========================================================================
+   8. Sidebar pattern
+   Two-column layout: sidebar + main. Collapses to stack on small screens.
+   ========================================================================== */
+
+.layout-sidebar {
+  display: grid;
+  gap: var(--nl-space-8);
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.layout-sidebar--gap-6 { gap: var(--nl-space-6); }
+.layout-sidebar--gap-10 { gap: var(--nl-space-10); }
+.layout-sidebar--gap-12 { gap: var(--nl-space-12); }
+
+/* Narrow sidebar — 1:2 ratio */
+.layout-sidebar--narrow {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Wide sidebar — 1:3 ratio */
+.layout-sidebar--wide {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Sidebar on the end (inline-end) */
+.layout-sidebar--flip > :first-child {
+  order: 2;
+}
+
+.layout-sidebar--flip > :last-child {
+  order: 1;
+}
+
+/* ==========================================================================
+   9. Auto grid
+   Responsive card grids — auto-fit / auto-fill with token min track.
+   Min track: calc(var(--nl-space-16) * 5) derived entirely from spacing tokens.
+   ========================================================================== */
+
+.layout-auto-grid {
+  display: grid;
+  gap: var(--nl-space-6);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, calc(var(--nl-space-16) * 5)), 1fr)
+  );
+}
+
+.layout-auto-grid--fill {
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(100%, calc(var(--nl-space-16) * 5)), 1fr)
+  );
+}
+
+.layout-auto-grid--compact {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, calc(var(--nl-space-12) * 4)), 1fr)
+  );
+}
+
+.layout-auto-grid--wide {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, var(--nl-container-sm)), 1fr)
+  );
+}
+
+.layout-auto-grid--gap-4 { gap: var(--nl-space-4); }
+.layout-auto-grid--gap-8 { gap: var(--nl-space-8); }
+.layout-auto-grid--gap-10 { gap: var(--nl-space-10); }
+
+/* ==========================================================================
+   10. Responsive layout helpers
+   Breakpoint-driven visibility, grid columns, stack direction, sidebar.
+   Uses --nl-breakpoint-* tokens from variables.css.
+   ========================================================================== */
+
+/* --- Grid column spans (12-column grid) --- */
+
+.layout-u-span-2 { grid-column: span 2; }
+.layout-u-span-3 { grid-column: span 3; }
+.layout-u-span-4 { grid-column: span 4; }
+.layout-u-span-6 { grid-column: span 6; }
+.layout-u-span-8 { grid-column: span 8; }
+.layout-u-span-12 { grid-column: span 12; }
+.layout-u-span-full { grid-column: 1 / -1; }
+
+/* --- Gap utilities --- */
+
+.layout-u-gap-1 { gap: var(--nl-space-1); }
+.layout-u-gap-2 { gap: var(--nl-space-2); }
+.layout-u-gap-3 { gap: var(--nl-space-3); }
+.layout-u-gap-4 { gap: var(--nl-space-4); }
+.layout-u-gap-6 { gap: var(--nl-space-6); }
+.layout-u-gap-8 { gap: var(--nl-space-8); }
+
+/* --- Visibility --- */
+
+.layout-u-hidden {
+  display: none;
+}
+
+/* Hidden below breakpoint — visible from md and up */
+.layout-u-hidden-until-md {
+  display: none;
+}
+
+.layout-u-hidden-until-lg {
+  display: none;
+}
+
+.layout-u-hidden-until-xl {
+  display: none;
+}
+
+/* Visible below breakpoint — hidden from md and up */
+.layout-u-hidden-from-md {
+  display: revert;
+}
+
+.layout-u-hidden-from-lg {
+  display: revert;
+}
+
+.layout-u-hidden-from-xl {
+  display: revert;
+}
+
+/* Hidden on small screens only */
+.layout-u-hidden-sm {
+  display: revert;
+}
+
+/* --- Container inline padding scale --- */
+
+@media (min-width: var(--nl-breakpoint-md)) {
+  .layout-container {
+    padding-inline: var(--nl-space-6);
+  }
+
+  .layout-grid--responsive-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .layout-grid--responsive-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .layout-u-hidden-until-md {
+    display: revert;
+  }
+
+  .layout-u-hidden-from-md {
+    display: none;
+  }
+}
+
+@media (min-width: var(--nl-breakpoint-lg)) {
+  .layout-container {
+    padding-inline: var(--nl-space-8);
+  }
+
+  .layout-section--responsive {
+    padding-block: var(--nl-space-20);
+  }
+
+  .layout-grid--responsive-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .layout-stack--row-lg {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .layout-sidebar,
+  .layout-sidebar--narrow {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  }
+
+  .layout-sidebar--wide {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  }
+
+  .layout-sidebar--flip > :first-child,
+  .layout-sidebar--flip > :last-child {
+    order: unset;
+  }
+
+  .layout-u-hidden-until-lg {
+    display: revert;
+  }
+
+  .layout-u-hidden-from-lg {
+    display: none;
+  }
+}
+
+@media (min-width: var(--nl-breakpoint-xl)) {
+  .layout-u-hidden-until-xl {
+    display: revert;
+  }
+
+  .layout-u-hidden-from-xl {
+    display: none;
+  }
+}
+
+@media (max-width: calc(var(--nl-breakpoint-sm) - 1px)) {
+  .layout-u-hidden-sm {
+    display: none;
+  }
+}

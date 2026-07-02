@@ -1,0 +1,353 @@
+/**
+ * ==========================================================================
+ * NL Design System — Design Tokens
+ * Brand: Natalia Lapkina — AI & Digital Products
+ * Phase: 1 — Foundation & Semantic Tokens
+ * Version: 0.9.1
+ * ==========================================================================
+ *
+ * All tokens are defined as CSS Custom Properties on :root.
+ * Semantic tokens reference Foundation tokens only (Neutral + Brand).
+ * Namespace: all public tokens use the --nl- prefix (v0.9.0).
+ *
+ * Usage (future projects):
+ *   color: var(--nl-color-text);
+ *   padding: var(--nl-space-4);
+ */
+
+:root {
+  /* ==========================================================
+     Foundation Colors — Neutral
+     Warm editorial gray scale. Calm, premium, readable on light UI.
+     Steps: 0 (white) → 900 (near-black text).
+     ========================================================== */
+
+  --neutral-0: #ffffff;   /* Pure surface / cards on tinted backgrounds */
+  --neutral-50: #f6f4ef;  /* Page background — warm studio tone */
+  --neutral-100: #eeebe4; /* Subtle fills, alternate surfaces */
+  --neutral-200: #ddd9d0; /* Borders, dividers (light) */
+  --neutral-300: #c4c0b6; /* Disabled borders, placeholders */
+  --neutral-400: #9c9c96; /* Muted icons, tertiary text */
+  --neutral-500: #7a7a74; /* Secondary labels */
+  --neutral-600: #5c5c58; /* Secondary body text */
+  --neutral-700: #3d3d3a; /* Strong secondary headings */
+  --neutral-800: #2a2a28; /* Dark surfaces (future dark mode base) */
+  --neutral-900: #1a1a18; /* Primary text, headings */
+
+  /* ==========================================================
+     Foundation Colors — Brand
+     Teal family: AI, trust, technology without cold corporate blue.
+     brand-600 is the primary action color for NL products.
+     ========================================================== */
+
+  --brand-50: #f0fdfa;   /* Soft tint backgrounds, badges */
+  --brand-100: #ccfbf1;  /* Hover fills, highlight zones */
+  --brand-200: #99f6e4;  /* Decorative accents, charts */
+  --brand-300: #5eead4;  /* Light accents, focus rings (soft) */
+  --brand-400: #2dd4bf;  /* Interactive secondary, warnings (attention) */
+  --brand-500: #14b8a6;  /* Links hover, gradient mid-tone */
+  --brand-600: #0d9488;  /* Primary brand — buttons, links, key UI */
+  --brand-700: #0f766e;  /* Primary hover, pressed states */
+  --brand-800: #115e59;  /* Deep accent, strong emphasis */
+  --brand-900: #134e4a;  /* Darkest brand — hero overlays, danger tone */
+
+  /* ==========================================================
+     Semantic Colors
+     Application-level aliases. MUST reference Foundation only.
+     ========================================================== */
+
+  /* Surfaces */
+  --nl-color-background: var(--neutral-50);      /* Main page canvas */
+  --nl-color-surface: var(--neutral-0);          /* Cards, panels, modals */
+  --nl-color-surface-alt: var(--neutral-100);    /* Band sections, inset areas */
+
+  /* Text */
+  --nl-color-text: var(--neutral-900);           /* Body copy */
+  --nl-color-text-secondary: var(--neutral-600);   /* Supporting text, captions */
+  --nl-color-heading: var(--neutral-900);        /* H1–H6, display type */
+
+  /* Structure */
+  --nl-color-border: var(--neutral-200);         /* Default component borders */
+  --nl-color-divider: var(--neutral-200);        /* Horizontal rules, separators */
+
+  /* Interactive */
+  --nl-color-primary: var(--brand-600);          /* Primary CTA, key actions */
+  --nl-color-primary-hover: var(--brand-700);    /* Primary hover / active */
+  --nl-color-link: var(--brand-600);             /* Inline links */
+
+  /* Feedback (mapped to Brand until dedicated accent scale in Phase 2) */
+  --nl-color-success: var(--brand-600);          /* Success — aligned with brand trust */
+  --nl-color-warning: var(--brand-400);          /* Warning — lighter brand attention */
+  --nl-color-danger: var(--brand-900);           /* Critical — deep brand contrast */
+
+  /* ==========================================================
+     Typography — Font Families
+     Base: humanist sans for UI. Heading: geometric display for impact.
+     ========================================================== */
+
+  --nl-font-family-base: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --nl-font-family-heading: 'Syne', var(--nl-font-family-base);
+
+  /* ==========================================================
+     Typography — Font Sizes
+     Modular scale (approx. 1.25). rem = accessible, respects user zoom.
+     ========================================================== */
+
+  --nl-font-size-xs: 0.75rem;    /* 12px — badges, meta labels */
+  --nl-font-size-sm: 0.875rem;   /* 14px — small UI, captions */
+  --nl-font-size-md: 1rem;       /* 16px — body default */
+  --nl-font-size-lg: 1.125rem;   /* 18px — lead paragraphs */
+  --nl-font-size-xl: 1.25rem;    /* 20px — H5, card titles */
+  --nl-font-size-2xl: 1.5rem;    /* 24px — H4 */
+  --nl-font-size-3xl: 1.875rem;  /* 30px — H3 */
+  --nl-font-size-4xl: 2.25rem;   /* 36px — H2 */
+  --nl-font-size-5xl: 3rem;      /* 48px — H1, hero display */
+
+  /* ==========================================================
+     Typography — Font Weights
+     ========================================================== */
+
+  --nl-font-weight-regular: 400;
+  --nl-font-weight-medium: 500;
+  --nl-font-weight-semibold: 600;
+  --nl-font-weight-bold: 700;
+
+  /* ==========================================================
+     Typography — Line Heights
+     ========================================================== */
+
+  --line-height-tight: 1.15;    /* Headings, display lines */
+  --line-height-normal: 1.6;  /* Body text default */
+  --line-height-relaxed: 1.8; /* Long-form, editorial blocks */
+
+  /* ==========================================================
+     Spacing — 8-Point Grid
+     Base unit: 8px (0.5rem). Odd steps use 4px half-unit where needed.
+     ========================================================== */
+
+  --nl-space-1: 0.25rem;  /*  4px — micro gaps, icon padding */
+  --nl-space-2: 0.5rem;   /*  8px — tight inline spacing */
+  --nl-space-3: 0.75rem;  /* 12px — compact component padding */
+  --nl-space-4: 1rem;     /* 16px — default padding, gaps */
+  --nl-space-5: 1.25rem;  /* 20px — form field spacing */
+  --nl-space-6: 1.5rem;   /* 24px — card padding (compact) */
+  --nl-space-8: 2rem;     /* 32px — section inner spacing */
+  --nl-space-10: 2.5rem;  /* 40px — block separation */
+  --nl-space-12: 3rem;    /* 48px — large component padding */
+  --nl-space-16: 4rem;    /* 64px — section gaps (small) */
+  --nl-space-20: 5rem;    /* 80px — section gaps (large) */
+
+  /* ==========================================================
+     Radius
+     Consistent corner language across cards, inputs, buttons.
+     ========================================================== */
+
+  --nl-radius-xs: 0.375rem;  /*  6px — chips, small tags */
+  --nl-radius-sm: 0.625rem;  /* 10px — inputs, small buttons */
+  --nl-radius-md: 0.875rem;  /* 14px — buttons, medium cards */
+  --nl-radius-lg: 1.375rem;  /* 22px — cards, panels */
+  --nl-radius-xl: 2rem;      /* 32px — hero cards, large sections */
+  --nl-radius-pill: 9999px;  /* Fully rounded — pills, avatars */
+
+  /* ==========================================================
+     Borders
+     ========================================================== */
+
+  --border-width: 1px;
+  --border-color: var(--nl-color-border);
+
+  /* ==========================================================
+     Shadows
+     Soft, layered elevation — Apple / Linear inspired. Low opacity neutrals.
+     ========================================================== */
+
+  --nl-shadow-xs: 0 1px 2px rgba(26, 26, 24, 0.04);
+  --nl-shadow-sm: 0 1px 3px rgba(26, 26, 24, 0.06),
+              0 1px 2px rgba(26, 26, 24, 0.04);
+  --nl-shadow-md: 0 4px 16px rgba(26, 26, 24, 0.06),
+              0 2px 6px rgba(26, 26, 24, 0.04);
+  --nl-shadow-lg: 0 12px 40px rgba(26, 26, 24, 0.08),
+              0 4px 12px rgba(26, 26, 24, 0.04);
+  --nl-shadow-xl: 0 24px 64px rgba(26, 26, 24, 0.1),
+              0 8px 24px rgba(26, 26, 24, 0.05);
+
+  /* ==========================================================
+     Motion — Duration & Easing
+     Studio default: Material-inspired standard curve.
+     ========================================================== */
+
+  --nl-duration-fast: 150ms;    /* Micro-interactions: opacity, color */
+  --nl-duration-normal: 300ms;  /* Hovers, toggles, small transforms */
+  --nl-duration-slow: 500ms;    /* Reveals, layout shifts, modals */
+
+  --nl-ease-standard: cubic-bezier(0.4, 0, 0.2, 1); /* Default — enter/exit */
+  --nl-ease-in: cubic-bezier(0.4, 0, 1, 1);         /* Accelerate — elements leaving */
+  --nl-ease-out: cubic-bezier(0, 0, 0.2, 1);        /* Decelerate — elements entering */
+
+  /* ==========================================================
+     Layout — Container Widths
+     Max content width per breakpoint tier (used in layout.css).
+     ========================================================== */
+
+  --nl-container-sm: 640px;   /* Narrow content, forms */
+  --nl-container-md: 768px;   /* Article width */
+  --nl-container-lg: 1024px;  /* Standard marketing pages */
+  --nl-container-xl: 1200px;  /* Full NL studio layout — portfolio, SaaS */
+
+  /* ==========================================================
+     Breakpoints
+     Reference values for media queries (min-width).
+     Note: CSS vars in @media need fallback in older browsers;
+     use these as documentation + future postcss/custom approach.
+     ========================================================== */
+
+  --nl-breakpoint-sm: 640px;   /* Large phones, small tablets */
+  --nl-breakpoint-md: 768px;   /* Tablets */
+  --nl-breakpoint-lg: 1024px;  /* Laptops */
+  --nl-breakpoint-xl: 1280px;  /* Desktops, wide layouts */
+
+  /* ==========================================================
+     Z-Index — Stacking Scale
+     Fixed increments prevent arbitrary z-index wars.
+     ========================================================== */
+
+  --nl-z-base: 0;        /* Default document flow */
+  --nl-z-dropdown: 100;  /* Menus, select popovers */
+  --nl-z-sticky: 200;    /* Sticky headers, subnav */
+  --nl-z-fixed: 300;     /* Fixed header, FAB */
+  --nl-z-modal: 400;     /* Modals, dialogs, drawers */
+  --nl-z-tooltip: 500;   /* Tooltips, toast notifications (top layer) */
+
+  /* ==========================================================
+     Component Tokens — Button
+     Maps Button component API to Foundation / Semantic tokens.
+     Spec: docs/components/Button.md · docs/foundations/Component-Tokens.md
+     ========================================================== */
+
+  /* Min block size per size scale (touch target) — component sizing, not spacing scale */
+  --nl-btn-height-sm: 40px;
+  --nl-btn-height-md: 48px;
+  --nl-btn-height-lg: 56px;
+  --nl-btn-height-xl: 64px;
+
+  /* Inline padding per size scale */
+  --nl-btn-padding-inline-sm: var(--nl-space-3);
+  --nl-btn-padding-inline-md: var(--nl-space-6);
+  --nl-btn-padding-inline-lg: var(--nl-space-8);
+
+  /* Gap between icon and label */
+  --nl-btn-gap: var(--nl-space-2);
+
+  /* Label weight */
+  --nl-btn-font-weight: var(--nl-font-weight-semibold);
+
+  /* Corner radius — default md scale */
+  --nl-btn-radius: var(--nl-radius-md);
+
+  /* Elevation on hover / emphasis */
+  --nl-btn-shadow: var(--nl-shadow-sm);
+
+  /* Icon cap size — matches md label cap height */
+  --nl-btn-icon-size: var(--nl-font-size-md);
+
+  /* Interactive properties — color, border, shadow */
+  --nl-btn-transition:
+    background-color var(--nl-duration-fast) var(--nl-ease-standard),
+    border-color var(--nl-duration-fast) var(--nl-ease-standard),
+    box-shadow var(--nl-duration-normal) var(--nl-ease-standard),
+    color var(--nl-duration-fast) var(--nl-ease-standard);
+
+  /* Focus ring — color and width for :focus-visible */
+  --nl-btn-focus-ring: var(--nl-color-primary);
+  --nl-btn-focus-ring-width: 2px;
+
+  /* ==========================================================
+     Component Tokens — Card
+     Maps Card component API to Foundation / Semantic tokens.
+     Spec: docs/components/Card.md · docs/foundations/Component-Tokens.md
+     ========================================================== */
+
+  /* Padding per size scale */
+  --nl-card-padding-sm: var(--nl-space-4);
+  --nl-card-padding-md: var(--nl-space-6);
+  --nl-card-padding-lg: var(--nl-space-8);
+
+  /* Internal vertical rhythm between card zones */
+  --nl-card-gap-sm: var(--nl-space-3);
+  --nl-card-gap-md: var(--nl-space-4);
+  --nl-card-gap-lg: var(--nl-space-6);
+
+  /* Shape, border, elevation */
+  --nl-card-radius: var(--nl-radius-lg);
+  --nl-card-border-width: var(--border-width);
+  --nl-card-shadow: var(--nl-shadow-sm);
+  --nl-card-shadow-hover: var(--nl-shadow-md);
+
+  /* Interactive properties — shadow, border, surface */
+  --nl-card-transition:
+    box-shadow var(--nl-duration-normal) var(--nl-ease-standard),
+    border-color var(--nl-duration-fast) var(--nl-ease-standard),
+    background-color var(--nl-duration-fast) var(--nl-ease-standard);
+
+  /* ==========================================================
+     Component Tokens — Badge
+     Maps Badge component API to Foundation / Semantic tokens.
+     Spec: docs/components/Badge.md · docs/foundations/Component-Tokens.md
+     ========================================================== */
+
+  /* Layout — inline padding per size scale */
+  --nl-badge-padding-inline-sm: var(--nl-space-2);
+  --nl-badge-padding-inline-md: var(--nl-space-3);
+  --nl-badge-padding-inline-lg: var(--nl-space-4);
+
+  /* Layout — block size per size scale */
+  --nl-badge-height-sm: 20px;
+  --nl-badge-height-md: 24px;
+  --nl-badge-height-lg: 28px;
+
+  /* Layout — gap between dot, icon, and label */
+  --nl-badge-gap: var(--nl-space-2);
+
+  /* Typography */
+  --nl-badge-font-size-sm: var(--nl-font-size-xs);
+  --nl-badge-font-size-md: var(--nl-font-size-sm);
+  --nl-badge-font-weight: var(--nl-font-weight-medium);
+
+  /* Radius */
+  --nl-badge-radius: var(--nl-radius-sm);
+
+  /* Border */
+  --nl-badge-border-width: var(--border-width);
+
+  /* Dot */
+  --nl-badge-dot-size: 6px;
+
+  /* Transition */
+  --nl-badge-transition:
+    background-color var(--nl-duration-fast) var(--nl-ease-standard),
+    border-color var(--nl-duration-fast) var(--nl-ease-standard),
+    color var(--nl-duration-fast) var(--nl-ease-standard);
+
+  /* Semantic aliases — neutral */
+  --nl-badge-neutral-bg: var(--nl-color-surface-alt);
+  --nl-badge-neutral-fg: var(--nl-color-text-secondary);
+
+  /* Semantic aliases — primary */
+  --nl-badge-primary-bg: var(--brand-50);
+  --nl-badge-primary-fg: var(--nl-color-primary);
+
+  /* Semantic aliases — success */
+  --nl-badge-success-bg: var(--brand-50);
+  --nl-badge-success-fg: var(--nl-color-success);
+
+  /* Semantic aliases — warning */
+  --nl-badge-warning-bg: var(--brand-100);
+  --nl-badge-warning-fg: var(--nl-color-warning);
+
+  /* Semantic aliases — danger */
+  --nl-badge-danger-bg: var(--neutral-100);
+  --nl-badge-danger-fg: var(--nl-color-danger);
+
+  /* Semantic aliases — outline */
+  --nl-badge-outline-border: var(--nl-color-border);
+}

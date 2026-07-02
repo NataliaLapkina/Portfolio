@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IC-001 Button Playground — NL Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/variables.css">
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/typography.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/components.css">
+</head>
+<body>
+  <div class="layout-page">
+    <main class="layout-page-main">
+      <div class="layout-section">
+        <div class="layout-container layout-stack layout-stack--gap-8">
+
+          <header class="layout-stack layout-stack--gap-3">
+            <p class="type-eyebrow">NL Design System</p>
+            <h1 class="type-h2">IC-001 — Button Playground</h1>
+            <p class="type-lead">Визуальная проверка компонента <code class="type-code">.nl-btn</code></p>
+          </header>
+
+          <!-- 1. Variants -->
+          <section class="layout-stack layout-stack--gap-4">
+            <h2 class="type-h4">1. Варианты</h2>
+            <div class="layout-cluster layout-cluster--gap-4">
+              <button type="button" class="nl-btn nl-btn--primary">
+                <span class="nl-btn__label">Primary</span>
+              </button>
+              <button type="button" class="nl-btn nl-btn--secondary">
+                <span class="nl-btn__label">Secondary</span>
+              </button>
+              <button type="button" class="nl-btn nl-btn--ghost">
+                <span class="nl-btn__label">Ghost</span>
+              </button>
+              <button type="button" class="nl-btn nl-btn--outline">
+                <span class="nl-btn__label">Outline</span>
+              </button>
+              <button type="button" class="nl-btn nl-btn--danger">
+                <span class="nl-btn__label">Danger</span>
+              </button>
+              <button type="button" class="nl-btn nl-btn--link">
+                <span class="nl-btn__label">Link</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- 2. Sizes -->
+          <section class="layout-stack layout-stack--gap-4">
+            <h2 class="type-h4">2. Размеры</h2>
+            <div class="layout-cluster layout-cluster--gap-4">
+              <button type="button" class="nl-btn nl-btn--primary nl-btn--sm">
+                <span class="nl-btn__label">Small</span>
+              </button>
+              <button type="button" class="nl-btn nl-btn--primary nl-btn--md">
+                <span class="nl-btn__label">Medium</span>
+              </button>
+              <button type="button" class="nl-btn nl-btn--primary nl-btn--lg">
+                <span class="nl-btn__label">Large</span>
+              </button>
+              <button type="button" class="nl-btn nl-btn--primary nl-btn--xl">
+                <span class="nl-btn__label">Extra large</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- 3. Block & fit -->
+          <section class="layout-stack layout-stack--gap-4">
+            <h2 class="type-h4">3. Block и fit</h2>
+            <div class="layout-stack layout-stack--gap-4">
+              <button type="button" class="nl-btn nl-btn--primary nl-btn--block">
+                <span class="nl-btn__label">Block — на всю ширину</span>
+              </button>
+              <div class="layout-cluster">
+                <button type="button" class="nl-btn nl-btn--secondary nl-btn--fit">
+                  <span class="nl-btn__label">Fit content</span>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- 4. Disabled -->
+          <section class="layout-stack layout-stack--gap-4">
+            <h2 class="type-h4">4. Disabled</h2>
+            <div class="layout-cluster layout-cluster--gap-4">
+              <button type="button" class="nl-btn nl-btn--primary" disabled>
+                <span class="nl-btn__label">Disabled (native)</span>
+              </button>
+              <button type="button" class="nl-btn nl-btn--outline" aria-disabled="true">
+                <span class="nl-btn__label">Disabled (aria)</span>
+              </button>
+              <button type="button" class="nl-btn nl-btn--danger" disabled>
+                <span class="nl-btn__label">Danger disabled</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- 5. Loading -->
+          <section class="layout-stack layout-stack--gap-4">
+            <h2 class="type-h4">5. Loading</h2>
+            <div class="layout-cluster layout-cluster--gap-4">
+              <button type="button" class="nl-btn nl-btn--primary" aria-busy="true">
+                <span class="nl-btn__loader" aria-hidden="true"></span>
+                <span class="nl-btn__label">aria-busy</span>
+              </button>
+              <button type="button" class="nl-btn nl-btn--secondary nl-btn--loading">
+                <span class="nl-btn__loader" aria-hidden="true"></span>
+                <span class="nl-btn__label">.nl-btn--loading</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- 6. Icons -->
+          <section class="layout-stack layout-stack--gap-4">
+            <h2 class="type-h4">6. Иконки</h2>
+            <div class="layout-cluster layout-cluster--gap-4">
+              <button type="button" class="nl-btn nl-btn--primary">
+                <span class="nl-btn__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M12 5v14M5 12h14"/>
+                  </svg>
+                </span>
+                <span class="nl-btn__label">Иконка слева</span>
+              </button>
+              <button type="button" class="nl-btn nl-btn--outline">
+                <span class="nl-btn__label">Иконка справа</span>
+                <span class="nl-btn__icon nl-btn__icon--trailing" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M7 17L17 7M17 7H9M17 7v8"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
