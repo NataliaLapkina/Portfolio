@@ -66,7 +66,7 @@
       <a href="#" class="nav__logo">НЛ</a>
       <ul class="nav__links" id="navLinks">
         <li><a href="#about" data-nav>Обо мне</a></li>
-        <li><a href="#services" data-nav>Услуги</a></li>
+        <li><a href="#solutions" data-nav>Решения</a></li>
         <li><a href="#portfolio" data-nav>Кейсы</a></li>
         <li><a href="#contact" data-nav>Контакты</a></li>
       </ul>
@@ -91,49 +91,152 @@
       <div class="hero__accent" aria-hidden="true"></div>
       <div class="container hero__grid">
         <div class="hero__content">
-          <p class="hero__eyebrow hero-animate" style="--i:0">
-            <span class="hero__eyebrow-dot"></span>
-            Наталья Лапкина · AI и автоматизация
-          </p>
-          <h1 class="hero__title hero-animate" style="--i:1">
-            <span class="hero__title-line hero__title-line--commercial">Разрабатываю AI-решения, сайты и системы автоматизации для бизнеса</span>
+          <h1 class="hero__title hero-animate" style="--i:0">
+            <span class="hero__name">Natalia Lapkina</span>
           </h1>
-          <p class="hero__text hero-animate" style="--i:2">Помогаю экспертам и компаниям привлекать клиентов, автоматизировать рутинные процессы и запускать цифровые продукты с использованием искусственного интеллекта.</p>
+          <p class="hero__subtitle hero-animate" style="--i:1">AI &amp; Digital Products</p>
+          <p class="hero__text hero-animate" style="--i:2">Проектирую и создаю цифровые продукты, которые помогают бизнесу работать эффективнее с помощью AI.</p>
           <div class="hero__actions hero-animate" style="--i:3">
             <a href="#contact" class="btn btn--primary magnetic nl-btn nl-btn--primary nl-btn--lg">Обсудить проект</a>
-            <a href="#portfolio" class="btn btn--ghost magnetic nl-btn nl-btn--ghost nl-btn--lg">Посмотреть кейсы</a>
           </div>
+          <ul class="hero__badges hero-animate" style="--i:4" aria-label="Ключевые направления">
+            <li class="hero__badge"><span class="hero__badge-check" aria-hidden="true">✓</span> AI Automation</li>
+            <li class="hero__badge"><span class="hero__badge-check" aria-hidden="true">✓</span> Web Development</li>
+            <li class="hero__badge"><span class="hero__badge-check" aria-hidden="true">✓</span> Digital Products</li>
+          </ul>
         </div>
         <div class="hero__visual hero-animate" style="--i:2">
-          <div class="hero__orbit-wrap" id="heroOrbit">
-            <div class="hero__orbit-glow"></div>
-            <div class="hero__orbit-ring hero__orbit-ring--1"></div>
-            <div class="hero__orbit-ring hero__orbit-ring--2"></div>
-            <div class="hero__orbit-ring hero__orbit-ring--3"></div>
-            <div class="hero__orbit-core" id="heroCore">
-              <!-- Чтобы показать фото: укажите путь в HERO_CONFIG.portraitSrc в script.js -->
-              <img class="hero__portrait" id="heroPortrait" src="" alt="Наталья Лапкина" width="120" height="120" hidden>
-              <span class="hero__orbit-initials" id="heroInitials">НЛ</span>
-            </div>
-            <div class="hero__orbit-node hero__orbit-node--1"><span>AI</span></div>
-            <div class="hero__orbit-node hero__orbit-node--2"><span>Web</span></div>
-            <div class="hero__orbit-node hero__orbit-node--3"><span>Bot</span></div>
-            <div class="hero__orbit-node hero__orbit-node--4"><span>MVP</span></div>
-            <div class="hero__float-card hero__float-card--1">
-              <span class="hero__float-icon">✦</span>
-              <span>AI-powered</span>
-            </div>
-            <div class="hero__float-card hero__float-card--2">
-              <span class="hero__float-icon">→</span>
-              <span>Идея → Продукт</span>
-            </div>
+          <div class="hero__portrait-frame has-portrait" id="heroPortraitFrame">
+            <div class="hero__portrait-glow" aria-hidden="true"></div>
+            <img
+              class="hero__portrait"
+              id="heroPortrait"
+              src="assets/images/hero/natalia-lapkina-hero.png?v=4"
+              alt="Natalia Lapkina"
+              width="640"
+              height="800"
+            >
+            <span class="hero__portrait-placeholder" id="heroInitials" hidden aria-hidden="true">NL</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Marquee -->
-    <div class="marquee" aria-hidden="true">
+    <!-- How I Work -->
+    <section class="approach section" id="how-i-work" aria-labelledby="how-i-work-title">
+      <div class="container">
+        <div class="section-header approach__header reveal">
+          <div class="section-header__body">
+            <span class="section-label">Подход</span>
+            <h2 class="section-title" id="how-i-work-title">Как я работаю</h2>
+            <p class="section-desc approach__lead">Каждый проект начинается не с выбора технологий, а с понимания задачи.</p>
+            <p class="section-desc approach__text">Я объединяю продуктовый подход, дизайн, разработку и возможности искусственного интеллекта, чтобы создавать цифровые решения, которые помогают бизнесу работать эффективнее.</p>
+          </div>
+        </div>
+
+        <div class="approach__grid">
+          <article class="approach-card reveal" style="--i:0">
+            <div class="approach-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="7"/>
+                <path d="M21 21l-4.35-4.35"/>
+              </svg>
+            </div>
+            <h3 class="approach-card__title">Понимаю задачу</h3>
+            <p class="approach-card__desc">Изучаю бизнес, цели и потребности пользователей прежде, чем предлагать решение.</p>
+            <span class="approach-card__label">Исследование</span>
+          </article>
+
+          <article class="approach-card reveal" style="--i:1">
+            <div class="approach-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+                <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+                <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+                <path d="M14 17.5h7M17.5 14v7"/>
+              </svg>
+            </div>
+            <h3 class="approach-card__title">Проектирую решение</h3>
+            <p class="approach-card__desc">Продумываю структуру, пользовательский путь и логику продукта ещё до начала разработки.</p>
+            <span class="approach-card__label">Архитектура продукта</span>
+          </article>
+
+          <article class="approach-card reveal" style="--i:2">
+            <div class="approach-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3l1.8 4.5L18.5 9l-4.2 2.2L13.2 16 12 13.2 10.8 16l-.9-4.8L5.5 9l4.7-1.5L12 3z"/>
+                <path d="M5 19h14"/>
+              </svg>
+            </div>
+            <h3 class="approach-card__title">Создаю продукт</h3>
+            <p class="approach-card__desc">Разрабатываю современные сайты, AI-инструменты и автоматизацию с вниманием к качеству, скорости и удобству.</p>
+            <span class="approach-card__label">Дизайн + AI + Разработка</span>
+          </article>
+
+          <article class="approach-card reveal" style="--i:3">
+            <div class="approach-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19V5"/>
+                <path d="M4 19h16"/>
+                <path d="M8 15l3-4 3 2 4-6"/>
+              </svg>
+            </div>
+            <h3 class="approach-card__title">Развиваю проект</h3>
+            <p class="approach-card__desc">После запуска анализирую результат, собираю обратную связь и помогаю продукту становиться лучше.</p>
+            <span class="approach-card__label">Аналитика и улучшения</span>
+          </article>
+        </div>
+
+        <ol class="approach-flow reveal reveal--delay" aria-label="Этапы работы">
+          <li class="approach-flow__step">Исследование</li>
+          <li class="approach-flow__step">Проектирование</li>
+          <li class="approach-flow__step">Разработка</li>
+          <li class="approach-flow__step">Запуск и развитие</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Value / About -->
+    <section class="about section section--band" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-header section-header--editorial about__header reveal">
+          <div class="section-header__body">
+            <span class="section-label">Ценность</span>
+            <h2 class="section-title" id="about-title">Создаю цифровые продукты, которые решают задачи бизнеса</h2>
+            <p class="section-desc about__lead">Помогаю экспертам и компаниям превращать идеи в современные цифровые продукты — понятные пользователям и полезные для бизнеса.</p>
+          </div>
+        </div>
+
+        <div class="about__grid">
+          <article class="about-card reveal" style="--i:0">
+            <div class="about-card__icon" aria-hidden="true">🎯</div>
+            <h3 class="about-card__title">Начинаю с задачи</h3>
+            <p class="about-card__desc">Каждый проект начинается с понимания бизнеса, целей и потребностей пользователей.</p>
+          </article>
+
+          <article class="about-card reveal" style="--i:1">
+            <div class="about-card__icon" aria-hidden="true">⚡</div>
+            <h3 class="about-card__title">Использую возможности AI</h3>
+            <p class="about-card__desc">Применяю AI там, где он действительно ускоряет работу и повышает качество результата.</p>
+          </article>
+
+          <article class="about-card reveal" style="--i:2">
+            <div class="about-card__icon" aria-hidden="true">🧩</div>
+            <h3 class="about-card__title">Проектирую до разработки</h3>
+            <p class="about-card__desc">Сначала продумываю структуру и пользовательский сценарий, затем приступаю к реализации.</p>
+          </article>
+
+          <article class="about-card reveal" style="--i:3">
+            <div class="about-card__icon" aria-hidden="true">📈</div>
+            <h3 class="about-card__title">Думаю о будущем продукта</h3>
+            <p class="about-card__desc">После запуска анализирую результат и помогаю продукту развиваться.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee — bridge before Solutions -->
+    <div class="marquee marquee--bridge" aria-hidden="true">
       <div class="marquee__track">
         <span>AI-ассистенты</span><span class="marquee__dot">◆</span>
         <span>Автоматизация</span><span class="marquee__dot">◆</span>
@@ -150,40 +253,12 @@
       </div>
     </div>
 
-    <!-- About -->
-    <section class="about section section--band" id="about">
+    <!-- Solutions -->
+    <section class="services section" id="solutions">
       <div class="container">
         <div class="section-header section-header--editorial reveal">
-          <span class="section-num" aria-hidden="true">01</span>
           <div class="section-header__body">
-            <span class="section-label">Обо мне</span>
-            <h2 class="section-title">Специалист по AI и цифровым продуктам</h2>
-          </div>
-        </div>
-        <div class="about__grid">
-          <div class="about__text reveal">
-            <p>Меня зовут <strong>Наталья Лапкина</strong>.</p>
-            <p>Я создаю сайты, AI-ассистентов и системы автоматизации для экспертов и малого бизнеса.</p>
-            <p>Моя задача — превращать идеи в работающие цифровые продукты, которые помогают привлекать клиентов, упрощать процессы и экономить время.</p>
-            <p>Использую современные AI-инструменты, no-code и low-code решения, а также веб-разработку для создания практичных и понятных продуктов.</p>
-          </div>
-          <div class="timeline-wrap reveal reveal--delay">
-            <h3 class="timeline__heading">Мой путь</h3>
-            <div class="timeline" id="timeline">
-              <!-- Populated by JS -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services -->
-    <section class="services section" id="services">
-      <div class="container">
-        <div class="section-header section-header--editorial reveal">
-          <span class="section-num" aria-hidden="true">02</span>
-          <div class="section-header__body">
-            <span class="section-label">Что я создаю</span>
+            <span class="section-label">Решения</span>
             <h2 class="section-title">Цифровые решения под задачи бизнеса</h2>
             <p class="section-desc">От AI-ассистентов до CRM — инструменты, которые работают на результат</p>
           </div>
@@ -198,7 +273,6 @@
     <section class="portfolio section section--band portfolio--agency" id="portfolio">
       <div class="container">
         <div class="section-header section-header--editorial reveal">
-          <span class="section-num" aria-hidden="true">03</span>
           <div class="section-header__body">
             <span class="section-label">Кейсы</span>
             <h2 class="section-title">Реализованные проекты и MVP</h2>
@@ -215,22 +289,12 @@
     <section class="why section" id="why">
       <div class="container">
         <div class="section-header section-header--editorial reveal">
-          <span class="section-num" aria-hidden="true">04</span>
           <div class="section-header__body">
             <span class="section-label">Сотрудничество</span>
             <h2 class="section-title">Почему со мной работают</h2>
           </div>
         </div>
         <div class="why__grid" id="whyGrid">
-          <!-- Populated by JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Process -->
-    <section class="process section" id="process">
-      <div class="container">
-        <div class="process-linear reveal" id="processLinear">
           <!-- Populated by JS -->
         </div>
       </div>
@@ -260,7 +324,6 @@
     <section class="testimonials section" id="testimonials">
       <div class="container">
         <div class="section-header section-header--editorial reveal">
-          <span class="section-num" aria-hidden="true">05</span>
           <div class="section-header__body">
             <span class="section-label">Отзывы</span>
             <h2 class="section-title">Что говорят клиенты</h2>
@@ -362,7 +425,6 @@
           <div class="contact__grid">
             <div class="contact__info reveal">
               <div class="section-header section-header--editorial section-header--compact">
-                <span class="section-num" aria-hidden="true">06</span>
                 <div class="section-header__body">
                   <span class="section-label">Контакты</span>
                   <h2 class="section-title">Свяжитесь со мной</h2>

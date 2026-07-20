@@ -26,10 +26,9 @@ const FORM_CONFIG = {
 };
 
 // ─── Config: Hero portrait ───
-// Укажите путь к фото или AI-портрету, чтобы заменить инициалы «НЛ»
 const HERO_CONFIG = {
-  portraitSrc: null,
-  portraitAlt: 'Наталья Лапкина'
+  portraitSrc: 'assets/images/hero/natalia-lapkina-hero.png?v=4',
+  portraitAlt: 'Natalia Lapkina'
 };
 
 // ─── Config: Contacts ───
@@ -155,36 +154,6 @@ const portfolio = [
   }
 ];
 
-// ─── Data: Timeline (Мой путь) ───
-const timelineSteps = [
-  {
-    label: 'База',
-    title: 'Медицина',
-    desc: 'Внимание к деталям и забота о людях'
-  },
-  {
-    label: 'Рост',
-    title: 'Нейросети и SMM',
-    desc: 'Погружение в digital и AI-инструменты'
-  },
-  {
-    label: 'Старт',
-    title: 'Первые цифровые проекты',
-    desc: 'Создание первых сайтов, презентаций и AI-проектов.'
-  },
-  {
-    label: 'Сейчас',
-    title: 'AI-разработка',
-    desc: 'Создание продуктов с помощью нейросетей'
-  },
-  {
-    label: 'Фокус',
-    title: 'Digital-продукты',
-    desc: 'Сайты, боты и MVP для экспертов',
-    active: true
-  }
-];
-
 // ─── Data: Why Me ───
 const whyMe = [
   { title: 'Понимаю бизнес-задачу, а не только код' },
@@ -237,7 +206,6 @@ function init() {
   initMagnetic();
   initTiltCards();
   initHeroPortrait();
-  renderTimeline();
   renderServices();
   renderPortfolio();
   renderWhyMe();
@@ -348,7 +316,7 @@ function initReveal() {
 // ─── Light parallax ───
 function initParallax() {
   const orbs = document.querySelectorAll('.gradient-orb');
-  const orbit = document.getElementById('heroOrbit');
+  const portrait = document.getElementById('heroPortraitFrame');
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   window.addEventListener('scroll', () => {
@@ -359,14 +327,14 @@ function initParallax() {
     });
   }, { passive: true });
 
-  if (orbit) {
+  if (portrait) {
     window.addEventListener('mousemove', (e) => {
-      const rect = orbit.getBoundingClientRect();
+      const rect = portrait.getBoundingClientRect();
       const cx = rect.left + rect.width / 2;
       const cy = rect.top + rect.height / 2;
       const dx = (e.clientX - cx) / rect.width;
       const dy = (e.clientY - cy) / rect.height;
-      orbit.style.transform = `rotateY(${dx * 8}deg) rotateX(${-dy * 8}deg)`;
+      portrait.style.transform = `translateY(${dy * -6}px) translateX(${dx * 4}px)`;
     }, { passive: true });
   }
 }
@@ -440,33 +408,16 @@ function initHeroPortrait() {
   const { portraitSrc, portraitAlt } = HERO_CONFIG;
   if (!portraitSrc) return;
 
-  const core = document.getElementById('heroCore');
+  const frame = document.getElementById('heroPortraitFrame');
   const img = document.getElementById('heroPortrait');
   const initials = document.getElementById('heroInitials');
-  if (!core || !img) return;
+  if (!frame || !img) return;
 
   img.src = portraitSrc;
-  img.alt = portraitAlt;
+  img.alt = portraitAlt || 'Natalia Lapkina';
   img.removeAttribute('hidden');
-  core.classList.add('has-portrait');
-  if (initials) initials.setAttribute('aria-hidden', 'true');
-}
-
-// ─── Render: Timeline ───
-function renderTimeline() {
-  const container = document.getElementById('timeline');
-  if (!container) return;
-
-  container.innerHTML = timelineSteps.map(step => `
-    <div class="timeline__item${step.active ? ' timeline__item--active' : ''}">
-      <div class="timeline__dot"></div>
-      <div class="timeline__content">
-        <span class="timeline__year">${step.label}</span>
-        <h3 class="timeline__title">${step.title}</h3>
-        <p class="timeline__desc">${step.desc}</p>
-      </div>
-    </div>
-  `).join('');
+  frame.classList.add('has-portrait');
+  if (initials) initials.setAttribute('hidden', '');
 }
 
 // ─── Render: Services ───
