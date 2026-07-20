@@ -22,7 +22,7 @@ const FORM_CONFIG = {
 
   // По умолчанию — mailto fallback
   method: 'mailto',
-  endpoint: 'lapkinanatala819@gmail.com'
+  endpoint: 'nl.digital.products@gmail.com'
 };
 
 // ─── Config: Hero portrait ───
@@ -48,8 +48,8 @@ const CONTACTS = [
   },
   {
     label: 'Email',
-    value: 'lapkinanatala819@gmail.com',
-    url: 'mailto:lapkinanatala819@gmail.com',
+    value: 'nl.digital.products@gmail.com',
+    url: 'mailto:nl.digital.products@gmail.com?subject=Project%20Inquiry',
     icon: '✉️'
   }
 ];
@@ -1021,7 +1021,7 @@ async function submitTelegram(endpoint, data) {
 }
 
 function submitMailto(data) {
-  const subject = encodeURIComponent(`Заявка от ${data.name}`);
+  const subject = encodeURIComponent(`Заявка с сайта от ${data.name}`);
   const body = encodeURIComponent(
     `Имя: ${data.name}\nКонтакт: ${data.contact}\n\nОписание проекта:\n${data.message}`
   );

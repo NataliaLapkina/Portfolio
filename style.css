@@ -3076,9 +3076,8 @@ body.is-loaded .cursor-glow { opacity: 1; }
   font-size: 0.975rem;
   font-weight: 600;
   color: var(--text);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .contact-channel__arrow {
@@ -3248,8 +3247,18 @@ body.is-loaded .cursor-glow { opacity: 1; }
 }
 
 .footer__role {
+  display: block;
   font-size: 0.8125rem;
   color: var(--text-secondary);
+}
+
+.footer__email {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .footer__copy {
