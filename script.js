@@ -85,6 +85,16 @@ const services = [
 // ─── Data: Portfolio ───
 const portfolio = [
   {
+    title: 'Бот для фотографа Ирины Шаровой',
+    projectType: 'Telegram · MyBotika',
+    desc: 'Telegram-бот знакомит с услугами фотографа и помогает отправить запрос на фотосессию.',
+    tech: ['MyBotika', 'Telegram', 'Сценарии', 'Заявки'],
+    status: 'Рабочий проект',
+    statusType: 'done',
+    visual: 'bots',
+    url: 'https://t.me/IrinaPhotoStoryBot'
+  },
+  {
     title: 'Автоматизация поиска клиентов',
     projectType: 'SaaS · Automation',
     desc: 'Система автоматического поиска потенциальных клиентов, email-рассылок и контроля коммуникаций.',
