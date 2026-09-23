@@ -91,7 +91,7 @@ const portfolio = [
     tech: ['MyBotika', 'Telegram', 'Сценарии', 'Заявки'],
     status: 'Рабочий проект',
     statusType: 'done',
-    visual: 'bots',
+    visual: 'photobot',
     url: 'https://t.me/IrinaPhotoStoryBot'
   },
   {
@@ -106,6 +106,7 @@ const portfolio = [
       'контроль последующих касаний',
       'аналитика взаимодействий'
     ],
+    featuresCollapsible: true,
     tech: ['Google Sheets', 'Gmail', 'Google Apps Script', 'AI'],
     status: 'Реализованный проект',
     statusType: 'done',
@@ -464,6 +465,7 @@ function renderCaseVisual(project) {
     case 'logoped': return renderCaseLogopedMockup();
     case 'shop': return renderCaseShopMockup();
     case 'bots': return renderCaseBotsMockup();
+    case 'photobot': return renderCasePhotobotMockup();
     default: return '';
   }
 }
@@ -562,6 +564,21 @@ function renderCaseBotsMockup() {
             <li>Интеграции</li>
           </ul>
         </div>
+      </div>
+    </div>`);
+}
+
+function renderCasePhotobotMockup() {
+  return caseCoverInner(`
+    <div class="case-cover__photobot" aria-hidden="true">
+      <div class="case-bot-preview case-bot-preview--cover">
+        <div class="case-bot-preview__top">
+          <span class="case-bot-preview__avatar">✦</span>
+          <span><strong>Фотограф Ирина</strong><small>бот · Telegram</small></span>
+          <span class="case-bot-preview__dots">•••</span>
+        </div>
+        <div class="case-bot-preview__message">Помогу выбрать фотосессию и оставить заявку.</div>
+        <div class="case-bot-preview__options"><span>Виды съёмок</span><span>Оставить заявку</span></div>
       </div>
     </div>`);
 }
@@ -725,11 +742,21 @@ function renderPortfolio() {
 
     const techTags = p.tech.map(t => `<li>${t}</li>`).join('');
 
-    const featuresHtml = p.features ? `
-      <div class="case-study__features">
-        <h4 class="case-study__features-title">Что реализовано</h4>
-        <ul class="case-study__features-list">${p.features.map(f => `<li>${f}</li>`).join('')}</ul>
-      </div>` : '';
+    const featuresList = p.features
+      ? `<ul class="case-study__features-list">${p.features.map(f => `<li>${f}</li>`).join('')}</ul>`
+      : '';
+
+    const featuresHtml = p.features
+      ? (p.featuresCollapsible
+        ? `<details class="case-study__features case-study__features--details">
+            <summary class="case-study__features-title">Что реализовано</summary>
+            ${featuresList}
+          </details>`
+        : `<div class="case-study__features">
+            <h4 class="case-study__features-title">Что реализовано</h4>
+            ${featuresList}
+          </div>`)
+      : '';
 
     const projectType = p.projectType
       ? `<span class="case-study__type">${p.projectType}</span>`
