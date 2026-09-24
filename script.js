@@ -9,8 +9,8 @@
 
 const FORM_CONFIG = {
   // Formspree: https://formspree.io/
-  // method: 'formspree',
-  // endpoint: 'https://formspree.io/f/YOUR_FORM_ID',
+  method: 'formspree',
+  endpoint: 'https://formspree.io/f/meaokyzk',
 
   // Google Apps Script Web App URL
   // method: 'gas',
@@ -20,9 +20,9 @@ const FORM_CONFIG = {
   // method: 'telegram',
   // endpoint: 'https://your-backend.com/api/send-telegram',
 
-  // По умолчанию — mailto fallback
-  method: 'mailto',
-  endpoint: 'nl.digital.products@gmail.com'
+  // mailto fallback
+  // method: 'mailto',
+  // endpoint: 'nl.digital.products@gmail.com'
 };
 
 // ─── Config: Hero portrait ───
@@ -42,7 +42,7 @@ const CONTACTS = [
   {
     label: 'WhatsApp',
     value: 'Написать в WhatsApp',
-    url: `https://wa.me/?text=${encodeURIComponent('Здравствуйте! Хочу обсудить проект.')}`,
+    url: `https://wa.me/79647819228?text=${encodeURIComponent('Здравствуйте! Хочу обсудить проект.')}`,
     icon: '💬'
   },
   {
@@ -85,7 +85,7 @@ const services = [
 // ─── Data: Portfolio ───
 const portfolio = [
   {
-    title: 'Бот для фотографа Ирины Шаровой',
+    title: 'Бот для фотографа',
     projectType: 'Telegram · MyBotika',
     desc: 'Telegram-бот знакомит с услугами фотографа и помогает отправить запрос на фотосессию.',
     tech: ['MyBotika', 'Telegram', 'Сценарии', 'Заявки'],
@@ -144,24 +144,14 @@ const portfolio = [
     url: 'https://natalialapkina.github.io/site-logoped-final/'
   },
   {
-    title: 'Интернет-магазин сладостей',
+    title: 'Интернет-магазин зефира „Облакозефир“',
     projectType: 'E-commerce',
-    desc: 'Концепция магазина ручной работы с уютным, но современным интерфейсом, каталогом и путём к заказу.',
+    desc: 'Сайт магазина зефира ручной работы с каталогом и оформлением заказа.',
     tech: ['Lovable', 'UI/UX', 'E-commerce', 'Адаптив'],
     status: 'Реализованный проект',
     statusType: 'done',
     visual: 'shop',
     url: 'https://airy-sweet-shop.lovable.app/'
-  },
-  {
-    title: 'AI-боты и автоматизация',
-    projectType: 'AI · Automation',
-    desc: 'Разработка сценариев, архитектуры и логики AI-ассистентов для бизнеса.',
-    tech: ['GPT', 'Telegram', 'AI Automation'],
-    status: 'Реализованные проекты',
-    statusType: 'done',
-    visual: 'bots',
-    url: null
   }
 ];
 
@@ -729,6 +719,8 @@ function renderCaseNutritionistMockup() {
 function renderPortfolio() {
   const grid = document.getElementById('portfolioGrid');
   const arrow = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>';
+  const lang = (document.documentElement.getAttribute('lang') || 'ru').toLowerCase();
+  const viewLabel = lang.startsWith('ru') ? 'Смотреть проект' : 'View project';
 
   grid.innerHTML = portfolio.map((p, i) => {
     const statusType = p.statusType || 'done';
@@ -737,7 +729,7 @@ function renderPortfolio() {
       : '';
 
     const cta = p.url
-      ? `<a href="${p.url}" target="_blank" rel="noopener noreferrer" class="btn btn--ghost case-study__cta">View project ${arrow}</a>`
+      ? `<a href="${p.url}" target="_blank" rel="noopener noreferrer" class="btn btn--ghost case-study__cta">${viewLabel} ${arrow}</a>`
       : '';
 
     const techTags = p.tech.map(t => `<li>${t}</li>`).join('');
@@ -762,19 +754,14 @@ function renderPortfolio() {
       ? `<span class="case-study__type">${p.projectType}</span>`
       : '';
 
-    const caseBadge = p.url
-      ? '<span class="case-study__badge">Case Study</span>'
-      : '';
-
     return `
       <article class="case-study case-study--card case-study--premium case-study--product reveal" style="--stagger: ${i}">
         <div class="case-study__visual-wrap">
-          ${caseBadge}
           ${renderCaseVisual(p)}
-          ${statusBadge}
           <div class="case-study__shine" aria-hidden="true"></div>
         </div>
         <div class="case-study__content">
+          ${statusBadge}
           ${projectType}
           <h3 class="case-study__title">${p.title}</h3>
           <p class="case-study__desc">${p.desc}</p>
@@ -809,16 +796,30 @@ function renderContacts() {
   const container = document.getElementById('contactChannels');
   if (!container) return;
 
-  container.innerHTML = CONTACTS.map(c => `
-    <a href="${c.url}" class="contact-channel" target="_blank" rel="noopener noreferrer">
-      <span class="contact-channel__icon" aria-hidden="true">${c.icon}</span>
-      <span class="contact-channel__body">
-        <span class="contact-channel__label">${c.label}</span>
-        <span class="contact-channel__value">${c.value}</span>
-      </span>
-      <svg class="contact-channel__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
-    </a>
-  `).join('');
+  container.innerHTML = CONTACTS.map(c => {
+    if (c.label === 'Email') {
+      return `
+        <div class="contact-channel contact-channel--static">
+          <span class="contact-channel__icon" aria-hidden="true">${c.icon}</span>
+          <span class="contact-channel__body">
+            <span class="contact-channel__label">${c.label}</span>
+            <span class="contact-channel__value" style="user-select: all; cursor: text;">${c.value}</span>
+          </span>
+        </div>
+      `;
+    }
+
+    return `
+      <a href="${c.url}" class="contact-channel" target="_blank" rel="noopener noreferrer">
+        <span class="contact-channel__icon" aria-hidden="true">${c.icon}</span>
+        <span class="contact-channel__body">
+          <span class="contact-channel__label">${c.label}</span>
+          <span class="contact-channel__value">${c.value}</span>
+        </span>
+        <svg class="contact-channel__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+      </a>
+    `;
+  }).join('');
 }
 
 // ─── Testimonials Slider ───
@@ -920,6 +921,12 @@ function animateCounter(el, target) {
 }
 
 // ─── Contact Form ───
+function getFormFieldValue(form, name) {
+  const field = form.elements.namedItem(name);
+  if (!field || typeof field.value !== 'string') return '';
+  return field.value.trim();
+}
+
 function initForm() {
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
@@ -930,9 +937,9 @@ function initForm() {
     status.textContent = '';
     status.className = 'form-status';
 
-    const name = form.name.value.trim();
-    const contact = form.contact.value.trim();
-    const message = form.message.value.trim();
+    const name = getFormFieldValue(form, 'name');
+    const contact = getFormFieldValue(form, 'contact');
+    const message = getFormFieldValue(form, 'message');
 
     if (!name || !contact || !message) {
       status.textContent = 'Пожалуйста, заполните все поля.';
@@ -945,6 +952,12 @@ function initForm() {
 
     try {
       await submitForm({ name, contact, message });
+
+      if (FORM_CONFIG.method === 'mailto') {
+        status.textContent = 'Черновик письма открыт. Чтобы отправить заявку, нажмите „Отправить“ в почтовой программе';
+        return;
+      }
+
       status.textContent = 'Заявка отправлена! Я свяжусь с вами в ближайшее время.';
       status.classList.add('is-success');
       form.reset();
