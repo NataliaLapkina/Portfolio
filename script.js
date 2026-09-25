@@ -564,7 +564,7 @@ function renderCasePhotobotMockup() {
       <div class="case-bot-preview case-bot-preview--cover">
         <div class="case-bot-preview__top">
           <span class="case-bot-preview__avatar">✦</span>
-          <span><strong>Фотограф Ирина</strong><small>бот · Telegram</small></span>
+          <span><strong>Фотограф</strong><small>бот · Telegram</small></span>
           <span class="case-bot-preview__dots">•••</span>
         </div>
         <div class="case-bot-preview__message">Помогу выбрать фотосессию и оставить заявку.</div>
